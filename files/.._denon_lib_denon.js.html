@@ -241,6 +241,8 @@ class Denon extends Connection {
    * Sets the volume of the Denon AVR.
    * Use {VolumeOptions} or a number from 0-98.
    *
+   * 80=80(0dB), 00=-0(--dB)(MIN)
+   *
    * @method setVolume
    * @param {VolumeOptions} volumeOptions [The volume option]
    * @return {Promise} [A response, or no response.]
