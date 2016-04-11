@@ -17,6 +17,16 @@ denon
   })
   .then((result) => {
     console.log(result);
+    return denon.setSurround(Options.SurroundOptions.Stereo);
+  })
+  .then((result) => {
+    console.log("RESOLVED")
+    console.log(result);
+    return denon.getSurround();
+  })
+  .then((result) => {
+    console.log("SURROUND->")
+    console.log(result);
   })
   .catch((error) => {
     console.log(error);
