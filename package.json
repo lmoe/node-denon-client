@@ -1,13 +1,9 @@
 {
   "name": "denon-client",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "A handy denon client. Allows controlling the AVR and listen to events.",
+  "author": "Lukas Möller <moe@codingart.de>",
+  "license": "GPL-3.0",
   "dependencies": {
     "bluebird": "^3.3.4",
     "lodash": "^4.9.0"
