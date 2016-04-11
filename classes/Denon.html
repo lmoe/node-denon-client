@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Denon</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b></b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/Denon", "classes/InputOptions", "classes/MuteOptions", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/Denon.html">Denon</a></li>
+                <li><a href="../classes/InputOptions.html">InputOptions</a></li>
+                <li><a href="../classes/MuteOptions.html">MuteOptions</a></li>
+                <li><a href="../classes/PowerOptions.html">PowerOptions</a></li>
+                <li><a href="../classes/SurroundOptions.html">SurroundOptions</a></li>
+                <li><a href="../classes/VolumeOptions.html">VolumeOptions</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>Denon</h1>
+</div>
+
+
+	<div class="well well-small">
+        <div class="extends">
+            Extends EventEmitter
+        </div>
+    </div>
+
+
+
+
+<div class="yuidoc-class-description">
+<p>The Denon AVR RPC class.</p>
+
+</div>
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				<li><a href="#method-_applyRegex"><span class="im">_applyRegex</span>(<span class="ia">data</span>)</a></li>
+				<li><a href="#method-_onData"><span class="im">_onData</span>(<span class="ia">data</span>)</a></li>
+				<li><a href="#method-getInput"><span class="im">getInput</span>()</a></li>
+				<li><a href="#method-getMute"><span class="im">getMute</span>()</a></li>
+				<li><a href="#method-getPower"><span class="im">getPower</span>()</a></li>
+				<li><a href="#method-getSurround"><span class="im">getSurround</span>()</a></li>
+				<li><a href="#method-getVolume"><span class="im">getVolume</span>()</a></li>
+				<li><a href="#method-getVolume"><span class="im">getVolume</span>()</a></li>
+				<li><a href="#method-sendCommand"><span class="im">sendCommand</span>(<span class="ia">command</span><span class="ia">parameter</span>)</a></li>
+				<li><a href="#method-setInput"><span class="im">setInput</span>(<span class="ia">inputOptions</span>)</a></li>
+				<li><a href="#method-setMute"><span class="im">setMute</span>(<span class="ia">muteOptions</span>)</a></li>
+				<li><a href="#method-setPower"><span class="im">setPower</span>(<span class="ia">powerOptions</span>)</a></li>
+				<li><a href="#method-setSurround"><span class="im">setSurround</span>(<span class="ia">surroundOptions</span>)</a></li>
+				<li><a href="#method-setVolume"><span class="im">setVolume</span>(<span class="ia">volumeOptions</span>)</a></li>
+			</ul>
+		</li>
+
+
+
+	</ul>
+</div>
+
+<!-- details -->
+
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+<div id="method-_applyRegex" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>_applyRegex</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>data</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">string  |  Undefined</span>
+		</span>
+	</div>
+
+
+		<span class="flag private">private</span>
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l91"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:91</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Does the RegEx magic.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">data</code>
+						<span class="type">string</span>
+
+
+					<div class="param-description"><p>[The incoming data]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">string  |  Undefined</span>:
+					<p>[Response or undefined]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-_onData" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>_onData</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>data</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+	</div>
+
+
+		<span class="flag private">private</span>
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l119"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:119</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Receives the incoming data. Does some RegEx magic.
+Calls the defined events and resolves promises.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">data</code>
+						<span class="type">string</span>
+
+
+					<div class="param-description"><p>[The incoming data]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+
+</div>
+<div id="method-getInput" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getInput</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l261"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:261</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Returns the current active input source (TV, DVD, ...) of the Denon AVR.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-getMute" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getMute</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l235"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:235</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Returns the current mute status of the Denon AVR.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-getPower" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getPower</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l209"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:209</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Returns the current power status of the Denon AVR.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-getSurround" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getSurround</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l287"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:287</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Returns the current surround mode of the Denon AVR.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-getVolume" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getVolume</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l183"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:183</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Returns the current Denon AVR volume.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-getVolume" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getVolume</code></span>
+
+		<span class="paren">()</span>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l171"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:171</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Returns the current Denon AVR volume.</p>
+</div>
+
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-sendCommand" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>sendCommand</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>command</code>
+				</li>
+				<li class="arg">
+						<code>parameter</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l138"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:138</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Sends a command to the Denon AVR</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">command</code>
+						<span class="type">String</span>
+
+
+					<div class="param-description"><p>[The command]</p>
+</div>
+
+				</li>
+				<li class="param">
+						<code class="param-name">parameter</code>
+						<span class="type">String</span>
+
+
+					<div class="param-description"><p>[The parameter]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-setInput" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>setInput</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>inputOptions</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l247"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:247</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Sets the active input of the Denon AVR. (TV, DVD, ...).
+Use {InputOptions}.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">inputOptions</code>
+						<span class="type"><a href="../classes/InputOptions.html" class="crosslink">InputOptions</a></span>
+
+
+					<div class="param-description"><p>[The input option]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-setMute" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>setMute</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>muteOptions</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l221"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:221</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Sets the mute status of the Denon AVR. (On / Off).
+Use {MuteOptions}.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">muteOptions</code>
+						<span class="type"><a href="../classes/MuteOptions.html" class="crosslink">MuteOptions</a></span>
+
+
+					<div class="param-description"><p>[The mute option]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-setPower" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>setPower</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>powerOptions</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l195"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:195</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Sets the power mode of the Denon AVR. (On / Standby).
+Use {PowerOptions}.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">powerOptions</code>
+						<span class="type"><a href="../classes/PowerOptions.html" class="crosslink">PowerOptions</a></span>
+
+
+					<div class="param-description"><p>[The power option]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-setSurround" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>setSurround</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>surroundOptions</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l273"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:273</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Sets the surround mode of the Denon AVR. (Dolby, Stereo, ...).
+Use {SurroundOptions}.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">surroundOptions</code>
+						<span class="type"><a href="../classes/SurroundOptions.html" class="crosslink">SurroundOptions</a></span>
+
+
+					<div class="param-description"><p>[The surround option]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+<div id="method-setVolume" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>setVolume</code></span>
+
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+				<li class="arg">
+						<code>volumeOptions</code>
+				</li>
+			</ul><span class="paren">)</span>
+		</div>
+		<span class="returns-inline">
+			<span class="type">Promise</span>
+		</span>
+	</div>
+
+
+
+
+
+
+	<div class="meta">
+				<p>
+				Defined in
+		<a href="../files/.._denon_lib_denon.js.html#l157"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:157</code></a>
+		</p>
+
+
+
+	</div>
+
+	<div class="description"><p>Sets the volume of the Denon AVR.
+Use {VolumeOptions} or a number from 0-98.</p>
+</div>
+
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+				<li class="param">
+						<code class="param-name">volumeOptions</code>
+						<span class="type"><a href="../classes/VolumeOptions.html" class="crosslink">VolumeOptions</a></span>
+
+
+					<div class="param-description"><p>[The volume option]</p>
+</div>
+
+				</li>
+			</ul>
+		</div>
+
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+						<span class="type">Promise</span>:
+					<p>[A response, or no response.]</p>
+
+			</div>
+		</div>
+
+</div>
+        </div>
+    </div>
+
+
+
+    <div id="events" class="page-section">
+        <h2 class="off-left">Events</h2>
+
+        <div class="item-list">
+<div id="event_inputChanged" class="events item">
+    <h3 class="name"><code>inputChanged</code></h3>
+    <span class="type"></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._denon_lib_denon.js.html#l53"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:53</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">input</code>
+                        <span class="type"><a href="../classes/InputOptions.html" class="crosslink">InputOptions</a></span>
+
+
+                    <div class="param-description">
+                        <p>The current input status</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+</div>
+<div id="event_masterVolumeChanged" class="events item">
+    <h3 class="name"><code>masterVolumeChanged</code></h3>
+    <span class="type"></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._denon_lib_denon.js.html#l29"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:29</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">volume</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The current volume</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+</div>
+<div id="event_masterVolumeMaxChanged" class="events item">
+    <h3 class="name"><code>masterVolumeMaxChanged</code></h3>
+    <span class="type"></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._denon_lib_denon.js.html#l37"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:37</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">maxVolume</code>
+                        <span class="type">Object</span>
+
+
+                    <div class="param-description">
+                        <p>The maximal volume</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+</div>
+<div id="event_muteChanged" class="events item">
+    <h3 class="name"><code>muteChanged</code></h3>
+    <span class="type"></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._denon_lib_denon.js.html#l45"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:45</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">mute</code>
+                        <span class="type"><a href="../classes/MuteOptions.html" class="crosslink">MuteOptions</a></span>
+
+
+                    <div class="param-description">
+                        <p>The current mute status</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+</div>
+<div id="event_powerChanged" class="events item">
+    <h3 class="name"><code>powerChanged</code></h3>
+    <span class="type"></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._denon_lib_denon.js.html#l61"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:61</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">power</code>
+                        <span class="type"><a href="../classes/PowerOptions.html" class="crosslink">PowerOptions</a></span>
+
+
+                    <div class="param-description">
+                        <p>The current power status</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+</div>
+<div id="event_surroundChanged" class="events item">
+    <h3 class="name"><code>surroundChanged</code></h3>
+    <span class="type"></span>
+
+
+
+
+
+    <div class="meta">
+                <p>
+                Defined in
+        <a href="../files/.._denon_lib_denon.js.html#l69"><code>..&#x2F;denon&#x2F;lib&#x2F;denon.js:69</code></a>
+        </p>
+
+
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+        <div class="params">
+            <h4>Event Payload:</h4>
+
+            <ul class="params-list">
+                <li class="param">
+                        <code class="param-name">surround</code>
+                        <span class="type"><a href="../classes/SurroundOptions.html" class="crosslink">SurroundOptions</a></span>
+
+
+                    <div class="param-description">
+                        <p>The current surround status</p>
+
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+
+</div>
+        </div>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

@@ -1,0 +1,931 @@
+{
+    "project": {},
+    "files": {
+        "../denon/lib/options/input_options.js": {
+            "name": "../denon/lib/options/input_options.js",
+            "modules": {},
+            "classes": {
+                "InputOptions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../denon/lib/options/mute_options.js": {
+            "name": "../denon/lib/options/mute_options.js",
+            "modules": {},
+            "classes": {
+                "MuteOptions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../denon/lib/options/power_options.js": {
+            "name": "../denon/lib/options/power_options.js",
+            "modules": {},
+            "classes": {
+                "PowerOptions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../denon/lib/options/surround_options.js": {
+            "name": "../denon/lib/options/surround_options.js",
+            "modules": {},
+            "classes": {
+                "SurroundOptions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../denon/lib/options/volume_options.js": {
+            "name": "../denon/lib/options/volume_options.js",
+            "modules": {},
+            "classes": {
+                "VolumeOptions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../denon/lib/denon.js": {
+            "name": "../denon/lib/denon.js",
+            "modules": {},
+            "classes": {
+                "Denon": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "InputOptions": {
+            "name": "InputOptions",
+            "shortname": "InputOptions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../denon/lib/options/input_options.js",
+            "line": 5,
+            "description": "The input options"
+        },
+        "MuteOptions": {
+            "name": "MuteOptions",
+            "shortname": "MuteOptions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../denon/lib/options/mute_options.js",
+            "line": 3,
+            "description": "The mute options"
+        },
+        "PowerOptions": {
+            "name": "PowerOptions",
+            "shortname": "PowerOptions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../denon/lib/options/power_options.js",
+            "line": 3,
+            "description": "The power options"
+        },
+        "SurroundOptions": {
+            "name": "SurroundOptions",
+            "shortname": "SurroundOptions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 3,
+            "description": "The surround options"
+        },
+        "VolumeOptions": {
+            "name": "VolumeOptions",
+            "shortname": "VolumeOptions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../denon/lib/options/volume_options.js",
+            "line": 3,
+            "description": "The volume options"
+        },
+        "Denon": {
+            "name": "Denon",
+            "shortname": "Denon",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../denon/lib/denon.js",
+            "line": 10,
+            "description": "The Denon AVR RPC class.",
+            "extends": "EventEmitter"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 11,
+            "description": "The CD attribute.",
+            "default": "CD",
+            "itemtype": "property",
+            "name": "CD",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 18,
+            "description": "The Tuner attribute.",
+            "default": "TUNER",
+            "itemtype": "property",
+            "name": "Tuner",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 25,
+            "description": "The DVD attribute.",
+            "default": "DVD",
+            "itemtype": "property",
+            "name": "DVD",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 32,
+            "description": "The BD attribute.",
+            "default": "BD",
+            "itemtype": "property",
+            "name": "BD",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 39,
+            "description": "The TV attribute.",
+            "default": "TV",
+            "itemtype": "property",
+            "name": "TV",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 46,
+            "description": "The Sattelite attribute.",
+            "default": "SAT/CBL",
+            "itemtype": "property",
+            "name": "Sattelite",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 53,
+            "description": "The Cable attribute.",
+            "default": "SAT/CBL",
+            "itemtype": "property",
+            "name": "Cable",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 60,
+            "description": "The MediaPlayer attribute.",
+            "default": "SMPLAY",
+            "itemtype": "property",
+            "name": "MediaPlayer",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 67,
+            "description": "The Game attribute.",
+            "default": "GAME",
+            "itemtype": "property",
+            "name": "Game",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 74,
+            "description": "The Aux1 attribute.",
+            "default": "AUX1",
+            "itemtype": "property",
+            "name": "Aux1",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 81,
+            "description": "The Net attribute.",
+            "default": "NET",
+            "itemtype": "property",
+            "name": "Net",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 88,
+            "description": "The USB attribute.",
+            "default": "USB",
+            "itemtype": "property",
+            "name": "USB",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 95,
+            "description": "The IPod attribute.",
+            "default": "USB/IPOD",
+            "itemtype": "property",
+            "name": "IPod",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 102,
+            "description": "The Status attribute.",
+            "default": "?",
+            "itemtype": "property",
+            "name": "Status",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/input_options.js",
+            "line": 109,
+            "description": "The Base attribute.",
+            "default": "SI",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "Base",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../denon/lib/options/mute_options.js",
+            "line": 9,
+            "description": "The On attribute.",
+            "default": "ON",
+            "itemtype": "property",
+            "name": "On",
+            "type": "String",
+            "class": "MuteOptions"
+        },
+        {
+            "file": "../denon/lib/options/mute_options.js",
+            "line": 16,
+            "description": "The Off attribute.",
+            "default": "OFF",
+            "itemtype": "property",
+            "name": "Off",
+            "type": "String",
+            "class": "MuteOptions"
+        },
+        {
+            "file": "../denon/lib/options/mute_options.js",
+            "line": 23,
+            "description": "The Status attribute.",
+            "default": "?",
+            "itemtype": "property",
+            "name": "Status",
+            "type": "String",
+            "class": "MuteOptions"
+        },
+        {
+            "file": "../denon/lib/options/mute_options.js",
+            "line": 30,
+            "description": "The Base attribute.",
+            "default": "MU",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "Base",
+            "type": "String",
+            "class": "MuteOptions"
+        },
+        {
+            "file": "../denon/lib/options/power_options.js",
+            "line": 9,
+            "description": "The On attribute.",
+            "default": "ON",
+            "itemtype": "property",
+            "name": "On",
+            "type": "String",
+            "class": "PowerOptions"
+        },
+        {
+            "file": "../denon/lib/options/power_options.js",
+            "line": 16,
+            "description": "The Off attribute.",
+            "default": "OFF",
+            "itemtype": "property",
+            "name": "Off",
+            "type": "String",
+            "class": "PowerOptions"
+        },
+        {
+            "file": "../denon/lib/options/power_options.js",
+            "line": 23,
+            "description": "The Status attribute.",
+            "default": "?",
+            "itemtype": "property",
+            "name": "Status",
+            "type": "String",
+            "class": "PowerOptions"
+        },
+        {
+            "file": "../denon/lib/options/power_options.js",
+            "line": 30,
+            "description": "The Base attribute.",
+            "default": "PW",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "Base",
+            "type": "String",
+            "class": "PowerOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 9,
+            "description": "The Movie attribute.",
+            "default": "MOVIE",
+            "itemtype": "property",
+            "name": "Movie",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 16,
+            "description": "The Music attribute.",
+            "default": "MUSIC",
+            "itemtype": "property",
+            "name": "Music",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 23,
+            "description": "The Game attribute.",
+            "default": "GAME",
+            "itemtype": "property",
+            "name": "Game",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 30,
+            "description": "The PureDirect attribute.",
+            "default": "PURE DIRECT",
+            "itemtype": "property",
+            "name": "PureDirect",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 37,
+            "description": "The Direct attribute.",
+            "default": "DIRECT",
+            "itemtype": "property",
+            "name": "Direct",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 44,
+            "description": "The Stereo attribute.",
+            "default": "Stereo",
+            "itemtype": "property",
+            "name": "Stereo",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 51,
+            "description": "The Standard attribute.",
+            "default": "STANDARD",
+            "itemtype": "property",
+            "name": "Standard",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 58,
+            "description": "The DolbyDigital attribute.",
+            "default": "DOLBY DIGITAL",
+            "itemtype": "property",
+            "name": "DolbyDigital",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 65,
+            "description": "The DtsSurround attribute.",
+            "default": "DTS SURROUND",
+            "itemtype": "property",
+            "name": "DtsSurround",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 72,
+            "description": "The MchStereo attribute.",
+            "default": "MCH STEREO",
+            "itemtype": "property",
+            "name": "MchStereo",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 79,
+            "description": "The RockArena attribute.",
+            "default": "ROCK ARENA",
+            "itemtype": "property",
+            "name": "RockArena",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 86,
+            "description": "The JazzClub attribute.",
+            "default": "JAZZ CLUB",
+            "itemtype": "property",
+            "name": "JazzClub",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 93,
+            "description": "The MonoMovie attribute.",
+            "default": "MONO MOVIE",
+            "itemtype": "property",
+            "name": "MonoMovie",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 100,
+            "description": "The Matrix attribute.",
+            "default": "MATRIX",
+            "itemtype": "property",
+            "name": "Matrix",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 107,
+            "description": "The VideoGame attribute.",
+            "default": "VIDEO GAME",
+            "itemtype": "property",
+            "name": "VideoGame",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 114,
+            "description": "The Virtual attribute.",
+            "default": "Virtual",
+            "itemtype": "property",
+            "name": "Virtual",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 121,
+            "description": "The Status attribute.",
+            "default": "?",
+            "itemtype": "property",
+            "name": "Status",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/surround_options.js",
+            "line": 128,
+            "description": "The Base attribute.",
+            "default": "MS",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "Base",
+            "type": "String",
+            "class": "SurroundOptions"
+        },
+        {
+            "file": "../denon/lib/options/volume_options.js",
+            "line": 9,
+            "description": "The Up attribute.",
+            "default": "UP",
+            "itemtype": "property",
+            "name": "Up",
+            "type": "String",
+            "class": "VolumeOptions"
+        },
+        {
+            "file": "../denon/lib/options/volume_options.js",
+            "line": 16,
+            "description": "The Down attribute.",
+            "default": "DOWN",
+            "itemtype": "property",
+            "name": "Down",
+            "type": "String",
+            "class": "VolumeOptions"
+        },
+        {
+            "file": "../denon/lib/options/volume_options.js",
+            "line": 23,
+            "description": "The Status attribute.",
+            "default": "?",
+            "itemtype": "property",
+            "name": "Status",
+            "type": "String",
+            "class": "VolumeOptions"
+        },
+        {
+            "file": "../denon/lib/options/volume_options.js",
+            "line": 30,
+            "description": "The Base attribute.",
+            "default": "MV",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "Base",
+            "type": "String",
+            "class": "VolumeOptions"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 17,
+            "description": "Initializes the telnet connection and sets up events.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "host",
+                    "description": "[The Denon AVR address]",
+                    "type": "String"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 29,
+            "itemtype": "event",
+            "name": "masterVolumeChanged",
+            "params": [
+                {
+                    "name": "volume",
+                    "description": "The current volume",
+                    "type": "Object"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 37,
+            "itemtype": "event",
+            "name": "masterVolumeMaxChanged",
+            "params": [
+                {
+                    "name": "maxVolume",
+                    "description": "The maximal volume",
+                    "type": "Object"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 45,
+            "itemtype": "event",
+            "name": "muteChanged",
+            "params": [
+                {
+                    "name": "mute",
+                    "description": "The current mute status",
+                    "type": "MuteOptions"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 53,
+            "itemtype": "event",
+            "name": "inputChanged",
+            "params": [
+                {
+                    "name": "input",
+                    "description": "The current input status",
+                    "type": "InputOptions"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 61,
+            "itemtype": "event",
+            "name": "powerChanged",
+            "params": [
+                {
+                    "name": "power",
+                    "description": "The current power status",
+                    "type": "PowerOptions"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 69,
+            "itemtype": "event",
+            "name": "surroundChanged",
+            "params": [
+                {
+                    "name": "surround",
+                    "description": "The current surround status",
+                    "type": "SurroundOptions"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 91,
+            "description": "Does the RegEx magic.",
+            "itemtype": "method",
+            "name": "_applyRegex",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "[The incoming data]",
+                    "type": "[string]"
+                }
+            ],
+            "return": {
+                "description": "[Response or undefined]",
+                "type": "[string|undefined]"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 119,
+            "description": "Receives the incoming data. Does some RegEx magic.\nCalls the defined events and resolves promises.",
+            "itemtype": "method",
+            "name": "_onData",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "[The incoming data]",
+                    "type": "[string]"
+                }
+            ],
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 138,
+            "description": "Sends a command to the Denon AVR",
+            "itemtype": "method",
+            "name": "sendCommand",
+            "params": [
+                {
+                    "name": "command",
+                    "description": "[The command]",
+                    "type": "String"
+                },
+                {
+                    "name": "parameter",
+                    "description": "[The parameter]",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 157,
+            "description": "Sets the volume of the Denon AVR.\nUse {VolumeOptions} or a number from 0-98.",
+            "itemtype": "method",
+            "name": "setVolume",
+            "params": [
+                {
+                    "name": "volumeOptions",
+                    "description": "[The volume option]",
+                    "type": "VolumeOptions"
+                }
+            ],
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 171,
+            "description": "Returns the current Denon AVR volume.",
+            "itemtype": "method",
+            "name": "getVolume",
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 183,
+            "description": "Returns the current Denon AVR volume.",
+            "itemtype": "method",
+            "name": "getVolume",
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 195,
+            "description": "Sets the power mode of the Denon AVR. (On / Standby).\nUse {PowerOptions}.",
+            "itemtype": "method",
+            "name": "setPower",
+            "params": [
+                {
+                    "name": "powerOptions",
+                    "description": "[The power option]",
+                    "type": "PowerOptions"
+                }
+            ],
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 209,
+            "description": "Returns the current power status of the Denon AVR.",
+            "itemtype": "method",
+            "name": "getPower",
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 221,
+            "description": "Sets the mute status of the Denon AVR. (On / Off).\nUse {MuteOptions}.",
+            "itemtype": "method",
+            "name": "setMute",
+            "params": [
+                {
+                    "name": "muteOptions",
+                    "description": "[The mute option]",
+                    "type": "MuteOptions"
+                }
+            ],
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 235,
+            "description": "Returns the current mute status of the Denon AVR.",
+            "itemtype": "method",
+            "name": "getMute",
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 247,
+            "description": "Sets the active input of the Denon AVR. (TV, DVD, ...).\nUse {InputOptions}.",
+            "itemtype": "method",
+            "name": "setInput",
+            "params": [
+                {
+                    "name": "inputOptions",
+                    "description": "[The input option]",
+                    "type": "InputOptions"
+                }
+            ],
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 261,
+            "description": "Returns the current active input source (TV, DVD, ...) of the Denon AVR.",
+            "itemtype": "method",
+            "name": "getInput",
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 273,
+            "description": "Sets the surround mode of the Denon AVR. (Dolby, Stereo, ...).\nUse {SurroundOptions}.",
+            "itemtype": "method",
+            "name": "setSurround",
+            "params": [
+                {
+                    "name": "surroundOptions",
+                    "description": "[The surround option]",
+                    "type": "SurroundOptions"
+                }
+            ],
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        },
+        {
+            "file": "../denon/lib/denon.js",
+            "line": 287,
+            "description": "Returns the current surround mode of the Denon AVR.",
+            "itemtype": "method",
+            "name": "getSurround",
+            "return": {
+                "description": "[A response, or no response.]",
+                "type": "Promise"
+            },
+            "class": "Denon"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nInitializes the telnet connection and sets up events.",
+            "line": " ../denon/lib/denon.js:17"
+        }
+    ]
+}
