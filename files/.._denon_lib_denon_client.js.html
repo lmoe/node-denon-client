@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>../denon/lib/denon_client.js</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+            
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b></b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/InputOptions", "classes/MuteOptions", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+                <li><a href="../classes/DenonClient.html">DenonClient</a></li>
+                <li><a href="../classes/InputOptions.html">InputOptions</a></li>
+                <li><a href="../classes/MuteOptions.html">MuteOptions</a></li>
+                <li><a href="../classes/PowerOptions.html">PowerOptions</a></li>
+                <li><a href="../classes/SurroundOptions.html">SurroundOptions</a></li>
+                <li><a href="../classes/VolumeOptions.html">VolumeOptions</a></li>
+        </ul>
+    </div>
+    </div>
+</div>
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>../denon/lib/denon_client.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+&#x27;use strict&#x27;;
+
+const Promise = require(&#x27;bluebird&#x27;);
+const _ = require(&#x27;lodash&#x27;);
+
+const Connection = require(&#x27;./connection&#x27;);
+const Options = require(&#x27;./options&#x27;);
+const DenonRegex = require(&#x27;./denon_regex&#x27;);
+
+/**
+ * The Denon AVR RPC class.
+ *
+ * @class DenonClient
+ * @extends EventEmitter
+ */
+class DenonClient extends Connection {
+  /**
+   * Initializes the telnet connection and sets up events.
+   *
+   * @constructor
+   * @param  {string} host [The Denon AVR address]
+   */
+  constructor(host) {
+    super(host);
+
+    this.regExTable = {
+      &#x27;masterVolume&#x27;: {
+        regEx: /(?:(MV))(?:(\d{2,3}))\r/,
+        /**
+         * @event masterVolumeChanged
+         * @param {object} volume The current volume
+         */
+        emit: &#x27;masterVolumeChanged&#x27;
+      },
+      &#x27;masterVolumeMax&#x27;: {
+        regEx: /(?:(MVMAX ))(?:(\d{2,3}))\r/,
+        /**
+         * @event masterVolumeMaxChanged
+         * @param {object} maxVolume The maximal volume
+         */
+        emit: &#x27;masterVolumeMaxChanged&#x27;
+      },
+      &#x27;mute&#x27;: {
+        regEx: DenonRegex.constructStatusChangedRegex(Options.MuteOptions),
+        /**
+         * @event muteChanged
+         * @param {MuteOptions} mute The current mute status
+         */
+        emit: &#x27;muteChanged&#x27;
+      },
+      &#x27;input&#x27;: {
+        regEx: DenonRegex.constructStatusChangedRegex(Options.InputOptions),
+        /**
+         * @event inputChanged
+         * @param {InputOptions} input The current input status
+         */
+        emit: &#x27;inputChanged&#x27;
+      },
+      &#x27;power&#x27;: {
+        regEx: DenonRegex.constructStatusChangedRegex(Options.PowerOptions),
+        /**
+         * @event powerChanged
+         * @param {PowerOptions} power The current power status
+         */
+        emit: &#x27;powerChanged&#x27;
+      },
+      &#x27;surround&#x27;: {
+        regEx: DenonRegex.constructStatusChangedRegex(Options.SurroundOptions),
+        /**
+         * @event surroundChanged
+         * @param {SurroundOptions} surround The current surround status
+         */
+        emit: &#x27;surroundChanged&#x27;
+      },
+    }
+
+    this.on(&#x27;data&#x27;, (data) =&gt; {
+      this._onData(data);
+    });
+  }
+
+  getEvent(key)
+  {
+    if (typeof this.regExTable[key] !== &#x27;undefined&#x27;) {
+      return this.regExTable[key].emit;
+    } else {
+      return undefined;
+    }
+  }
+
+  /**
+   * Does the RegEx magic.
+   *
+   * @method _applyRegex
+   * @private
+   * @param  {[string]} data  [The incoming data]
+   * @return {[string|undefined]} [Response or undefined]
+   */
+  _applyRegex(data) {
+    //const expression = new RegExp(regEx);
+    const keys = _(this.regExTable).keys();
+    const matches = [];
+
+    _(keys).each((key) =&gt; {
+      const handler = this.regExTable[key];
+      const match = data.match(handler.regEx);
+
+      if (match != null) {
+        const matchResult = handler;
+        matchResult.value = match[2];
+
+        matches.push(matchResult);
+      }
+    });
+
+    return matches;
+  }
+
+  /**
+   * Receives the incoming data. Does some RegEx magic.
+   * Calls the defined events and resolves promises.
+   *
+   * @method _onData
+   * @private
+   * @param  {[string]} data [The incoming data]
+   */
+  _onData(data) {
+    if (typeof data === &#x27;string&#x27;) {
+      const response = data.replace(&#x27;\r&#x27;, &#x27;&#x27;);
+      const results = this._applyRegex(data);
+
+      results.forEach((result) =&gt; {
+        this.emit(result.emit, result.value);
+      })
+    }
+  }
+
+  /**
+   * Sends a command to the Denon AVR
+   *
+   * @method sendCommand
+   * @param  {string} command   [The command]
+   * @param  {string} parameter [The parameter]
+   * @return {Promise} [A response]
+   */
+  sendCommand(command, parameter, hook) {
+    return new Promise((resolve) =&gt; {
+      this.once(hook, (result) =&gt; {
+        resolve(result);
+      });
+
+      return this
+        .write(&#x60;${command}${parameter}&#x60;);
+    })
+  }
+
+  /**
+   * Sets the volume of the Denon AVR.
+   * Use {VolumeOptions} or a number from 0-98.
+   *
+   * 80=80(0dB), 00=-0(--dB)(MIN)
+   *
+   * @method setVolume
+   * @param {VolumeOptions} volumeOptions [The volume option]
+   * @return {Promise} [A response]
+   */
+  setVolume(volumeOptions) {
+
+    return this.sendCommand(&#x27;MV&#x27;, volumeOptions,
+      this.getEvent(&#x27;masterVolume&#x27;));
+  }
+
+  /**
+   * Returns the current Denon AVR volume.
+   *
+   * @method getVolume
+   * @return {Promise} [A response]
+   */
+  getVolume() {
+
+    return this.sendCommand(&#x27;MV&#x27;, Options.VolumeOptions.Status,
+      this.getEvent(&#x27;masterVolume&#x27;));
+  }
+
+  /**
+   * Returns the current Denon AVR volume.
+   *
+   * @method getVolume
+   * @return {Promise} [A response]
+   */
+  getMaxVolume() {
+
+    return this.sendCommand(&#x27;MV&#x27;, Options.VolumeOptions.Status,
+      this.getEvent(&#x27;masterVolumeMax&#x27;));
+  }
+
+  /**
+   * Sets the power mode of the Denon AVR. (On / Standby).
+   * Use {PowerOptions}.
+   *
+   * @method setPower
+   * @param {PowerOptions} powerOptions [The power option]
+   * @return {Promise} [A response]
+   */
+  setPower(powerOptions) {
+
+    return this.sendCommand(&#x27;PW&#x27;, powerOptions,
+      this.getEvent(&#x27;power&#x27;));
+  }
+
+  /**
+   * Returns the current power status of the Denon AVR.
+   *
+   * @method getPower
+   * @return {Promise} [A response]
+   */
+  getPower() {
+
+    return this.sendCommand(&#x27;PW&#x27;, Options.PowerOptions.Status,
+      this.getEvent(&#x27;power&#x27;));
+  }
+
+  /**
+   * Sets the mute status of the Denon AVR. (On / Off).
+   * Use {MuteOptions}.
+   *
+   * @method setMute
+   * @param {MuteOptions} muteOptions [The mute option]
+   * @return {Promise} [A response]
+   */
+  setMute(muteOptions) {
+
+    return this.sendCommand(&#x27;MU&#x27;, muteOptions,
+      this.getEvent(&#x27;mute&#x27;));
+  }
+
+  /**
+   * Returns the current mute status of the Denon AVR.
+   *
+   * @method getMute
+   * @return {Promise} [A response]
+   */
+  getMute() {
+
+    return this.sendCommand(&#x27;MU&#x27;, Options.MuteOptions.Status,
+      this.getEvent(&#x27;mute&#x27;));
+  }
+
+  /**
+   * Sets the active input of the Denon AVR. (TV, DVD, ...).
+   * Use {InputOptions}.
+   *
+   * @method setInput
+   * @param {InputOptions} inputOptions [The input option]
+   * @return {Promise} [A response]
+   */
+  setInput(inputOptions) {
+
+    return this.sendCommand(&#x27;SI&#x27;, inputOptions,
+      this.getEvent(&#x27;input&#x27;));
+  }
+
+  /**
+   * Returns the current active input source (TV, DVD, ...) of the Denon AVR.
+   *
+   * @method getInput
+   * @return {Promise} [A response]
+   */
+  getInput() {
+
+    return this.sendCommand(&#x27;SI&#x27;, Options.InputOptions.Status,
+      this.getEvent(&#x27;input&#x27;));
+  }
+
+  /**
+   * Sets the surround mode of the Denon AVR. (Dolby, Stereo, ...).
+   * Use {SurroundOptions}.
+   *
+   * @method setSurround
+   * @param {SurroundOptions} surroundOptions [The surround option]
+   * @return {Promise} [A response]
+   */
+  setSurround(surroundOptions) {
+
+    return this.sendCommand(&#x27;MS&#x27;, surroundOptions,
+      this.getEvent(&#x27;surround&#x27;));
+  }
+
+  /**
+   * Returns the current surround mode of the Denon AVR.
+   *
+   * @method getSurround
+   * @return {Promise} [A response]
+   */
+  getSurround() {
+
+    return this.sendCommand(&#x27;MS&#x27;, Options.SurroundOptions.Status,
+      this.getEvent(&#x27;surround&#x27;));
+  }
+}
+
+module.exports = DenonClient;
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

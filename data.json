@@ -46,11 +46,11 @@
             "fors": {},
             "namespaces": {}
         },
-        "../denon/lib/denon.js": {
-            "name": "../denon/lib/denon.js",
+        "../denon/lib/denon_client.js": {
+            "name": "../denon/lib/denon_client.js",
             "modules": {},
             "classes": {
-                "Denon": 1
+                "DenonClient": 1
             },
             "fors": {},
             "namespaces": {}
@@ -118,15 +118,15 @@
             "line": 3,
             "description": "The volume options"
         },
-        "Denon": {
-            "name": "Denon",
-            "shortname": "Denon",
+        "DenonClient": {
+            "name": "DenonClient",
+            "shortname": "DenonClient",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 10,
             "description": "The Denon AVR RPC class.",
             "extends": "EventEmitter"
@@ -595,7 +595,7 @@
             "class": "VolumeOptions"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 17,
             "description": "Initializes the telnet connection and sets up events.",
             "is_constructor": 1,
@@ -606,10 +606,10 @@
                     "type": "String"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 29,
             "itemtype": "event",
             "name": "masterVolumeChanged",
@@ -620,10 +620,10 @@
                     "type": "Object"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 37,
             "itemtype": "event",
             "name": "masterVolumeMaxChanged",
@@ -634,10 +634,10 @@
                     "type": "Object"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 45,
             "itemtype": "event",
             "name": "muteChanged",
@@ -648,10 +648,10 @@
                     "type": "MuteOptions"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 53,
             "itemtype": "event",
             "name": "inputChanged",
@@ -662,10 +662,10 @@
                     "type": "InputOptions"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 61,
             "itemtype": "event",
             "name": "powerChanged",
@@ -676,10 +676,10 @@
                     "type": "PowerOptions"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 69,
             "itemtype": "event",
             "name": "surroundChanged",
@@ -690,10 +690,10 @@
                     "type": "SurroundOptions"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 91,
             "description": "Does the RegEx magic.",
             "itemtype": "method",
@@ -711,10 +711,10 @@
                 "description": "[Response or undefined]",
                 "type": "[string|undefined]"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 119,
             "description": "Receives the incoming data. Does some RegEx magic.\nCalls the defined events and resolves promises.",
             "itemtype": "method",
@@ -728,10 +728,10 @@
                     "type": "[string]"
                 }
             ],
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 138,
             "description": "Sends a command to the Denon AVR",
             "itemtype": "method",
@@ -749,13 +749,13 @@
                 }
             ],
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 157,
             "description": "Sets the volume of the Denon AVR.\nUse {VolumeOptions} or a number from 0-98.\n\n80=80(0dB), 00=-0(--dB)(MIN)",
             "itemtype": "method",
@@ -768,37 +768,37 @@
                 }
             ],
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 173,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 185,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 197,
             "description": "Sets the power mode of the Denon AVR. (On / Standby).\nUse {PowerOptions}.",
             "itemtype": "method",
@@ -811,25 +811,25 @@
                 }
             ],
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 211,
             "description": "Returns the current power status of the Denon AVR.",
             "itemtype": "method",
             "name": "getPower",
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 223,
             "description": "Sets the mute status of the Denon AVR. (On / Off).\nUse {MuteOptions}.",
             "itemtype": "method",
@@ -842,25 +842,25 @@
                 }
             ],
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 237,
             "description": "Returns the current mute status of the Denon AVR.",
             "itemtype": "method",
             "name": "getMute",
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 249,
             "description": "Sets the active input of the Denon AVR. (TV, DVD, ...).\nUse {InputOptions}.",
             "itemtype": "method",
@@ -873,25 +873,25 @@
                 }
             ],
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 263,
             "description": "Returns the current active input source (TV, DVD, ...) of the Denon AVR.",
             "itemtype": "method",
             "name": "getInput",
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 275,
             "description": "Sets the surround mode of the Denon AVR. (Dolby, Stereo, ...).\nUse {SurroundOptions}.",
             "itemtype": "method",
@@ -904,28 +904,28 @@
                 }
             ],
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon.js",
+            "file": "../denon/lib/denon_client.js",
             "line": 289,
             "description": "Returns the current surround mode of the Denon AVR.",
             "itemtype": "method",
             "name": "getSurround",
             "return": {
-                "description": "[A response, or no response.]",
+                "description": "[A response]",
                 "type": "Promise"
             },
-            "class": "Denon"
+            "class": "DenonClient"
         }
     ],
     "warnings": [
         {
             "message": "Missing item type\nInitializes the telnet connection and sets up events.",
-            "line": " ../denon/lib/denon.js:17"
+            "line": " ../denon/lib/denon_client.js:17"
         }
     ]
 }
