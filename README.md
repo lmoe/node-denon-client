@@ -21,13 +21,16 @@ Setting up is simple.
 // Initialization
 const Denon = require('denon-client');
 /**
- * Denon is now an object with containing DenonClient and Options.
+ * Denon is now an object containing DenonClient and Options.
  * Use the DenonClient to send requests. Use the Options to define the data.
  */
 const denonClient = new Denon.DenonClient(`${DenonAVRHost}`);
 
 // Subscribe to any available event
 denon.on('masterVolumeChanged', (volume) => {
+  // This event will fire every time when the volume changes.
+  // Including non requested volume changes (Using a remote, using the volume wheel on the device).
+   
   console.log(`Volume changed to: ${volume}`);
 });
 
