@@ -4,6 +4,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "DenonClient",
         "InputOptions",
         "MuteOptions",
+        "Options",
         "PowerOptions",
         "SurroundOptions",
         "VolumeOptions"

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>PowerOptions</title>
+    <title>../denon/lib/options.js</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -77,157 +77,54 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>PowerOptions</h1>
+    <h1>../denon/lib/options.js <small>File</small></h1>
 </div>
 
+<div class="file">
+    <pre class="prettyprint linenums">
+const InputOptions = require(&#x27;./options/input_options&#x27;);
+const MuteOptions = require(&#x27;./options/mute_options&#x27;);
+const PowerOptions = require(&#x27;./options/power_options&#x27;);
+const SurroundOptions = require(&#x27;./options/surround_options&#x27;);
+const VolumeOptions = require(&#x27;./options/volume_options&#x27;);
 
 
+/**
+ * Offers option classes to ease requests.
+ *
+ * @class Options
+ */
 
+module.exports = {
+  /**
+   * @property InputOptions
+   * @type {InputOptions}
+   */
+  InputOptions: InputOptions,
+  /**
+   * @property MuteOptions
+   * @type {MuteOptions}
+   */
+  MuteOptions: MuteOptions,
+  /**
+   * @property PowerOptions
+   * @type {PowerOptions}
+   */
+  PowerOptions: PowerOptions,
+  /**
+   * @property SurroundOptions
+   * @type {SurroundOptions}
+   */
+  SurroundOptions: SurroundOptions,
+  /**
+   * @property VolumeOptions
+   * @type {VolumeOptions}
+   */
+  VolumeOptions: VolumeOptions
+}
 
-
-<div class="yuidoc-class-description">
-<p>The power options</p>
-
+    </pre>
 </div>
-
-<!-- table of contents -->
-
-<div id="class-toc" class="page-section">
-	<h2>Table of Contents</h2>
-    <ul>
-
-		<li>
-			<strong>Properties</strong>
-			<ul>
-				<li><a href="#prop-Base"><span class="ip">Base</span></a></li>
-				<li><a href="#prop-Off"><span class="ip">Off</span></a></li>
-				<li><a href="#prop-On"><span class="ip">On</span></a></li>
-				<li><a href="#prop-Status"><span class="ip">Status</span></a></li>
-			</ul>
-		</li>
-
-
-	</ul>
-</div>
-
-<!-- details -->
-
-
-
-    <div id="properties" class="page-section">
-        <h2 class="off-left">Properties</h2>
-
-        <div class="item-list">
-<div id="prop-Base" class="property item private">
-    <h3 class="name"><code>Base</code></h3>
-    <span class="type">String</span>
-
-
-        <span class="flag private">private</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._denon_lib_options_power_options.js.html#l30"><code>..&#x2F;denon&#x2F;lib&#x2F;options&#x2F;power_options.js:30</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The Base attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> PW</p>
-
-
-</div>
-<div id="prop-Off" class="property item">
-    <h3 class="name"><code>Off</code></h3>
-    <span class="type">String</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._denon_lib_options_power_options.js.html#l16"><code>..&#x2F;denon&#x2F;lib&#x2F;options&#x2F;power_options.js:16</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The Off attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> OFF</p>
-
-
-</div>
-<div id="prop-On" class="property item">
-    <h3 class="name"><code>On</code></h3>
-    <span class="type">String</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._denon_lib_options_power_options.js.html#l9"><code>..&#x2F;denon&#x2F;lib&#x2F;options&#x2F;power_options.js:9</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The On attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> ON</p>
-
-
-</div>
-<div id="prop-Status" class="property item">
-    <h3 class="name"><code>Status</code></h3>
-    <span class="type">String</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._denon_lib_options_power_options.js.html#l23"><code>..&#x2F;denon&#x2F;lib&#x2F;options&#x2F;power_options.js:23</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The Status attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> ?</p>
-
-
-</div>
-        </div>
-    </div>
-
-
-
                     </div>
                 </div>
             </div>

@@ -54,6 +54,15 @@
             },
             "fors": {},
             "namespaces": {}
+        },
+        "../denon/lib/options.js": {
+            "name": "../denon/lib/options.js",
+            "modules": {},
+            "classes": {
+                "Options": 1
+            },
+            "fors": {},
+            "namespaces": {}
         }
     },
     "modules": {},
@@ -130,6 +139,18 @@
             "line": 10,
             "description": "The Denon AVR RPC class.",
             "extends": "EventEmitter"
+        },
+        "Options": {
+            "name": "Options",
+            "shortname": "Options",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../denon/lib/options.js",
+            "line": 8,
+            "description": "Offers option classes to ease requests."
         }
     },
     "elements": {},
@@ -920,6 +941,46 @@
                 "type": "Promise"
             },
             "class": "DenonClient"
+        },
+        {
+            "file": "../denon/lib/options.js",
+            "line": 15,
+            "itemtype": "property",
+            "name": "InputOptions",
+            "type": "{InputOptions}",
+            "class": "Options"
+        },
+        {
+            "file": "../denon/lib/options.js",
+            "line": 20,
+            "itemtype": "property",
+            "name": "MuteOptions",
+            "type": "{MuteOptions}",
+            "class": "Options"
+        },
+        {
+            "file": "../denon/lib/options.js",
+            "line": 25,
+            "itemtype": "property",
+            "name": "PowerOptions",
+            "type": "{PowerOptions}",
+            "class": "Options"
+        },
+        {
+            "file": "../denon/lib/options.js",
+            "line": 30,
+            "itemtype": "property",
+            "name": "SurroundOptions",
+            "type": "{SurroundOptions}",
+            "class": "Options"
+        },
+        {
+            "file": "../denon/lib/options.js",
+            "line": 35,
+            "itemtype": "property",
+            "name": "VolumeOptions",
+            "type": "{VolumeOptions}",
+            "class": "Options"
         }
     ],
     "warnings": [
