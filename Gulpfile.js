@@ -1,5 +1,6 @@
-var gulp = require('gulp');
-var mocha = require('gulp-mocha');
+const gulp = require('gulp');
+const mocha = require('gulp-mocha');
+const yuidoc = require("gulp-yuidoc");
 
 gulp.task('test', function () {
 	return gulp.src('./tests/*.js', {read: false})
