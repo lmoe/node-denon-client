@@ -1,0 +1,22 @@
+{
+  "name": "denon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "lodash": "^4.9.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5",
+    "should": "^8.3.0",
+    "yuidoc-lucid-theme": "^0.1.2"
+  }
+}
