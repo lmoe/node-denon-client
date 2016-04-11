@@ -3,7 +3,7 @@ A handy node library which allows you to control and receive events of a Denon A
 
 # Docs
 A yuidoc based documentation is available here:
-http://lmoe.github.io/node-denon-client/classes/Denon.html
+http://lmoe.github.io/node-denon-client
 
 # Introduction
 
