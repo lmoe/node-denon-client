@@ -27,10 +27,10 @@ const Denon = require('denon-client');
 const denonClient = new Denon.DenonClient(`${DenonAVRHost}`);
 
 // Subscribe to any available event
-denon.on('masterVolumeChanged', (volume) => {
+denonClient.on('masterVolumeChanged', (volume) => {
   // This event will fire every time when the volume changes.
   // Including non requested volume changes (Using a remote, using the volume wheel on the device).
-   
+
   console.log(`Volume changed to: ${volume}`);
 });
 
