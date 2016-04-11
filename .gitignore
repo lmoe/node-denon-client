@@ -33,5 +33,9 @@ node_modules
 .node_repl_history
 
 # VS Code config folder
-
 .vscode
+
+# Project internal stuff
+app.js
+generate_documentation.sh
+out
