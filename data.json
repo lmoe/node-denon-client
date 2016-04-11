@@ -757,14 +757,14 @@
         {
             "file": "../denon/lib/denon_client.js",
             "line": 157,
-            "description": "Sets the volume of the Denon AVR.\nUse {VolumeOptions} or a number from 0-98.\n\n80=80(0dB), 00=-0(--dB)(MIN)",
+            "description": "Sets the volume of the Denon AVR.\nUse {VolumeOptions} or a number from 0-98.\n\n80=80(0dB), 00=-0(--dB)(MIN)\nVolumeOptions.Up / VolumeOptions.Down",
             "itemtype": "method",
             "name": "setVolume",
             "params": [
                 {
                     "name": "volumeOptions",
                     "description": "[The volume option]",
-                    "type": "VolumeOptions"
+                    "type": "VolumeOptions|number"
                 }
             ],
             "return": {
@@ -775,7 +775,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 173,
+            "line": 174,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
@@ -787,7 +787,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 185,
+            "line": 186,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
@@ -799,7 +799,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 197,
+            "line": 198,
             "description": "Sets the power mode of the Denon AVR. (On / Standby).\nUse {PowerOptions}.",
             "itemtype": "method",
             "name": "setPower",
@@ -818,7 +818,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 211,
+            "line": 212,
             "description": "Returns the current power status of the Denon AVR.",
             "itemtype": "method",
             "name": "getPower",
@@ -830,7 +830,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 223,
+            "line": 224,
             "description": "Sets the mute status of the Denon AVR. (On / Off).\nUse {MuteOptions}.",
             "itemtype": "method",
             "name": "setMute",
@@ -849,7 +849,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 237,
+            "line": 238,
             "description": "Returns the current mute status of the Denon AVR.",
             "itemtype": "method",
             "name": "getMute",
@@ -861,7 +861,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 249,
+            "line": 250,
             "description": "Sets the active input of the Denon AVR. (TV, DVD, ...).\nUse {InputOptions}.",
             "itemtype": "method",
             "name": "setInput",
@@ -880,7 +880,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 263,
+            "line": 264,
             "description": "Returns the current active input source (TV, DVD, ...) of the Denon AVR.",
             "itemtype": "method",
             "name": "getInput",
@@ -892,7 +892,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 275,
+            "line": 276,
             "description": "Sets the surround mode of the Denon AVR. (Dolby, Stereo, ...).\nUse {SurroundOptions}.",
             "itemtype": "method",
             "name": "setSurround",
@@ -911,7 +911,7 @@
         },
         {
             "file": "../denon/lib/denon_client.js",
-            "line": 289,
+            "line": 290,
             "description": "Returns the current surround mode of the Denon AVR.",
             "itemtype": "method",
             "name": "getSurround",

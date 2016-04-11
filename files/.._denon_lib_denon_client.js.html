@@ -242,9 +242,10 @@ class DenonClient extends Connection {
    * Use {VolumeOptions} or a number from 0-98.
    *
    * 80=80(0dB), 00=-0(--dB)(MIN)
+   * VolumeOptions.Up / VolumeOptions.Down
    *
    * @method setVolume
-   * @param {VolumeOptions} volumeOptions [The volume option]
+   * @param {VolumeOptions|number} volumeOptions [The volume option]
    * @return {Promise} [A response]
    */
   setVolume(volumeOptions) {
