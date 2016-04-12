@@ -1,6 +1,16 @@
 # node-denon-avr
 A handy node library which allows you to control and receive events of a Denon AVR.
 
+# Few words
+
+This library is not complete. There are functions missing.
+Feel free to contribute by doing pull requests. New functions are easy to implement.
+
+Get the protocol specification here:
+http://assets.denon.com/documentmaster/de/avr3313ci_protocol_v02.pdf
+
+The protocol is pretty unified so any Denon AVR should be somewhat compatible.
+
 # Docs
 A yuidoc based documentation is available here:
 http://lmoe.github.io/node-denon-client
