@@ -1,5 +1,5 @@
 const Denon = require('./lib/denon_client');
-const denon = new Denon('192.168.2.251');
+const denon = new Denon('192.168.2.119');
 const Options = require('./lib/options');
 
 denon
