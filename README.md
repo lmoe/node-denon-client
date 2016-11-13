@@ -67,3 +67,9 @@ denonClient
     console.error(error);
   });
 ```
+
+# Changelog
+
+## 1.0.5
+- Fix the getVolume functionality as it returned a three digit value when the receiver returns a double (22.5 -> 225)
+- Implemented transform methods for each event / hook

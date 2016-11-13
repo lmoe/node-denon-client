@@ -1,8 +1,8 @@
 {
   "name": "denon-client",
-  "version": "0.1.4",
-  "description": "A handy denon client. Allows controlling the AVR and listen to events.",
-  "author": "Lukas Möller <moe@codingart.de>",
+  "version": "0.1.5",
+  "description": "A handy denon avr client. Allows controlling the AVR and listen to events. May work with Marantz devices too.",
+  "author": "Lukas Möller <lmoe@tutanota.de>",
   "license": "GPL-3.0",
   "repository" : {
     "type" : "git",
@@ -19,5 +19,6 @@
     "mocha": "^2.4.5",
     "should": "^8.3.0",
     "yuidoc-lucid-theme": "^0.1.2"
-  }
+  },
+  "keywords": ["denon", "marantz", "remote", "control"]
 }
