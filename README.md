@@ -70,6 +70,9 @@ denonClient
 
 # Changelog
 
+## 1.0.7
+- Remove console.log ..
+
 ## 1.0.6
 - Fix setVolume returns no promise
 - Fix setVolume does not set float values like 22.5 as the denon API requires a non float number (225)
