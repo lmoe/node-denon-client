@@ -1,6 +1,6 @@
 {
   "name": "denon-client",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A handy denon avr client. Allows controlling the AVR and listen to events. May work with Marantz devices too.",
   "author": "Lukas Möller <lmoe@tutanota.de>",
   "license": "GPL-3.0",
