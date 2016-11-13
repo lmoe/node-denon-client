@@ -70,6 +70,9 @@ denonClient
 
 # Changelog
 
+## 1.0.8
+- Fix setVolume not being able to use a volume under 10 or floats.
+
 ## 1.0.7
 - Remove console.log ..
 
