@@ -70,6 +70,9 @@ denonClient
 
 # Changelog
 
+## 0.1.9
+- Implemented set and get of the display brightness
+
 ## 0.1.8
 - Fix setVolume not being able to use a volume under 10 or floats.
 
