@@ -70,16 +70,16 @@ denonClient
 
 # Changelog
 
-## 1.0.8
+## 0.1.8
 - Fix setVolume not being able to use a volume under 10 or floats.
 
-## 1.0.7
+## 0.1.7
 - Remove console.log ..
 
-## 1.0.6
+## 0.1.6
 - Fix setVolume returns no promise
 - Fix setVolume does not set float values like 22.5 as the denon API requires a non float number (225)
 
-## 1.0.5
+## 0.1.5
 - Fix the getVolume functionality as it returned a three digit value when the receiver returns a double (22.5 -> 225)
 - Implemented transform methods for each event / hook
