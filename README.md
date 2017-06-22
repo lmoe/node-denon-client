@@ -73,7 +73,7 @@ denonClient
 ## 0.2.0
 - To meet the Semver rules the package version was changed from 0.1.9 to 0.2.0 because of the last new feature.
 
-- Four new input options have been added [Aux2, MPlay, MXPort, VDP] (Thanks to @DarkCinema and @jaydonoghue) 
+- Four new input options have been added (Aux2, MPlay, MXPort, VDP). (Thanks to @DarkCinema and @jaydonoghue) 
 
 - The port can now be set manually. Port 23 is still the default one. (Thanks to @jaydonoghue) 
 
