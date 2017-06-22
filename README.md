@@ -70,6 +70,9 @@ denonClient
 
 # Changelog
 
+## 0.2.1 - 0.2.2
+- Update Readme
+
 ## 0.2.0
 - To meet the Semver rules the package version was changed from 0.1.9 to 0.2.0 because of the last new feature.
 
