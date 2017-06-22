@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>../denon/lib/options/surround_options.js</title>
+    <title>../node-denon-client/lib/options/input_options.js</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/DisplayDimOptions", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,7 @@
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
                 <li><a href="../classes/DenonClient.html">DenonClient</a></li>
+                <li><a href="../classes/DisplayDimOptions.html">DisplayDimOptions</a></li>
                 <li><a href="../classes/InputOptions.html">InputOptions</a></li>
                 <li><a href="../classes/MuteOptions.html">MuteOptions</a></li>
                 <li><a href="../classes/Options.html">Options</a></li>
@@ -77,7 +78,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>../denon/lib/options/surround_options.js <small>File</small></h1>
+    <h1>../node-denon-client/lib/options/input_options.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -85,23 +86,65 @@
 &#x27;use strict&#x27;;
 
 /**
- * The surround options
+ * The input options
  *
- * @class SurroundOptions
+ * @class InputOptions
  */
 
 /**
-* The Movie attribute.
+* The CD attribute.
 *
-* @default MOVIE
-* @property {string} Movie
+* @default CD
+* @property {string} CD
 */
 
 /**
-* The Music attribute.
+* The Tuner attribute.
 *
-* @default MUSIC
-* @property {string} Music
+* @default TUNER
+* @property {string} Tuner
+*/
+
+/**
+* The DVD attribute.
+*
+* @default DVD
+* @property {string} DVD
+*/
+
+/**
+* The BD attribute.
+*
+* @default BD
+* @property {string} BD
+*/
+
+/**
+* The TV attribute.
+*
+* @default TV
+* @property {string} TV
+*/
+
+/**
+* The Sattalite attribute.
+*
+* @default SAT/CBL
+* @property {string} Sattalite
+*/
+
+/**
+* The Cable attribute.
+*
+* @default SAT/CBL
+* @property {string} Cable
+*/
+
+/**
+* The MediaPlayer attribute.
+*
+* @default SMPLAY
+* @property {string} MediaPlayer
 */
 
 /**
@@ -112,95 +155,53 @@
 */
 
 /**
-* The PureDirect attribute.
+* The Aux1 attribute.
 *
-* @default PURE DIRECT
-* @property {string} PureDirect
+* @default AUX1
+* @property {string} Aux1
 */
 
 /**
-* The Direct attribute.
+ * The Aux2 attribute.
+ * 
+ * @default AUX2
+ * @property {string} Aux2
+ */
+
+/**
+* The Net attribute.
 *
-* @default DIRECT
-* @property {string} Direct
+* @default NET
+* @property {string} Net
 */
 
 /**
-* The Stereo attribute.
+* The USB attribute.
 *
-* @default Stereo
-* @property {string} Stereo
+* @default USB
+* @property {string} USB
 */
 
 /**
-* The Standard attribute.
+* The IPod attribute.
 *
-* @default STANDARD
-* @property {string} Standard
+* @default USB/IPOD
+* @property {string} IPod
 */
 
 /**
-* The DolbyDigital attribute.
-*
-* @default DOLBY DIGITAL
-* @property {string} DolbyDigital
-*/
+ * The MPlay attribute.
+ * 
+ * @default MPLAY
+ * @property {string} MPlay
+ */
 
 /**
-* The DtsSurround attribute.
-*
-* @default DTS SURROUND
-* @property {string} DtsSurround
-*/
-
-/**
-* The MchStereo attribute.
-*
-* @default MCH STEREO
-* @property {string} MchStereo
-*/
-
-/**
-* The RockArena attribute.
-*
-* @default ROCK ARENA
-* @property {string} RockArena
-*/
-
-/**
-* The JazzClub attribute.
-*
-* @default JAZZ CLUB
-* @property {string} JazzClub
-*/
-
-/**
-* The MonoMovie attribute.
-*
-* @default MONO MOVIE
-* @property {string} MonoMovie
-*/
-
-/**
-* The Matrix attribute.
-*
-* @default MATRIX
-* @property {string} Matrix
-*/
-
-/**
-* The VideoGame attribute.
-*
-* @default VIDEO GAME
-* @property {string} VideoGame
-*/
-
-/**
-* The Virtual attribute.
-*
-* @default Virtual
-* @property {string} Virtual
-*/
+ * The MXPort attribute.
+ * 
+ * @default MXPORT
+ * @property {string} MXPort
+ */
 
 /**
 * The Status attribute.
@@ -212,30 +213,34 @@
 /**
 * The Base attribute.
 *
-* @default MS
+* @default SI
 * @private
 * @property {string} Base
 */
-module.exports = {
-  Movie: &#x27;MOVIE&#x27;,
-  Music: &#x27;MUSIC&#x27;,
-  Game: &#x27;GAME&#x27;,
-  PureDirect: &#x27;PURE DIRECT&#x27;,
-  Direct: &#x27;DIRECT&#x27;,
-  Stereo: &#x27;STEREO&#x27;,
-  Standard: &#x27;STANDARD&#x27;,
-  DolbyDigital: &#x27;DOLBY DIGITAL&#x27;,
-  DtsSurround: &#x27;DTS SURROUND&#x27;,
-  MchStereo: &#x27;MCH STEREO&#x27;,
-  RockArena: &#x27;ROCK ARENA&#x27;,
-  JazzClub: &#x27;JAZZ CLUB&#x27;,
-  MonoMovie: &#x27;MONO MOVIE&#x27;,
-  Matrix: &#x27;MATRIX&#x27;,
-  VideoGame: &#x27;VIDEO GAME&#x27;,
-  Virtual: &#x27;VIRTUAL&#x27;,
-  Status: &#x27;?&#x27;,
-  Base: &#x27;MS&#x27;
+
+const InputOptions = {
+    CD: &#x27;CD&#x27;,
+    Tuner: &#x27;TUNER&#x27;,
+    DVD: &#x27;DVD&#x27;,
+    BD: &#x27;BD&#x27;,
+    TV: &#x27;TV&#x27;,
+    Sattalite: &#x27;SAT/CBL&#x27;,
+    Cable: &#x27;SAT/CBL&#x27;,
+    MediaPlayer: &#x27;SMPLAY&#x27;,
+    Game: &#x27;GAME&#x27;,
+    Aux1: &#x27;AUX1&#x27;,
+    Aux2: &#x27;AUX2&#x27;,
+    MPlay: &#x27;MPLAY&#x27;,
+    MXPort: &#x27;MXPORT&#x27;,
+    Net: &#x27;NET&#x27;,
+    IPod: &#x27;USB/IPOD&#x27;,
+    USB: &#x27;USB&#x27;,   
+    VDP: &#x27;VDP&#x27;,    
+    Status: &#x27;?&#x27;,
+    Base: &#x27;SI&#x27;
 };
+
+module.exports = InputOptions;
 
     </pre>
 </div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>MuteOptions</title>
+    <title>../node-denon-client/lib/options/volume_options.js</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -78,157 +78,57 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>MuteOptions</h1>
+    <h1>../node-denon-client/lib/options/volume_options.js <small>File</small></h1>
 </div>
 
+<div class="file">
+    <pre class="prettyprint linenums">
+&#x27;use strict&#x27;;
 
+/**
+ * The volume options
+ *
+ * @class VolumeOptions
+ */
 
+/**
+* The Up attribute.
+*
+* @default UP
+* @property {string} Up
+*/
 
+/**
+* The Down attribute.
+*
+* @default DOWN
+* @property {string} Down
+*/
 
+/**
+* The Status attribute.
+*
+* @default ?
+* @property {string} Status
+*/
 
-<div class="yuidoc-class-description">
-<p>The mute options</p>
+/**
+* The Base attribute.
+*
+* @default MV
+* @private
+* @property {string} Base
+*/
 
+module.exports = {
+  Up: &#x27;UP&#x27;,
+  Down: &#x27;DOWN&#x27;,
+  Status: &#x27;?&#x27;,
+  Base: &#x27;MV&#x27;
+};
+
+    </pre>
 </div>
-
-<!-- table of contents -->
-
-<div id="class-toc" class="page-section">
-	<h2>Table of Contents</h2>
-    <ul>
-
-		<li>
-			<strong>Properties</strong>
-			<ul>
-				<li><a href="#prop-Base"><span class="ip">Base</span></a></li>
-				<li><a href="#prop-Off"><span class="ip">Off</span></a></li>
-				<li><a href="#prop-On"><span class="ip">On</span></a></li>
-				<li><a href="#prop-Status"><span class="ip">Status</span></a></li>
-			</ul>
-		</li>
-
-
-	</ul>
-</div>
-
-<!-- details -->
-
-
-
-    <div id="properties" class="page-section">
-        <h2 class="off-left">Properties</h2>
-
-        <div class="item-list">
-<div id="prop-Base" class="property item private">
-    <h3 class="name"><code>Base</code></h3>
-    <span class="type">String</span>
-
-
-        <span class="flag private">private</span>
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._node-denon-client_lib_options_mute_options.js.html#l30"><code>..&#x2F;node-denon-client&#x2F;lib&#x2F;options&#x2F;mute_options.js:30</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The Base attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> MU</p>
-
-
-</div>
-<div id="prop-Off" class="property item">
-    <h3 class="name"><code>Off</code></h3>
-    <span class="type">String</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._node-denon-client_lib_options_mute_options.js.html#l16"><code>..&#x2F;node-denon-client&#x2F;lib&#x2F;options&#x2F;mute_options.js:16</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The Off attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> OFF</p>
-
-
-</div>
-<div id="prop-On" class="property item">
-    <h3 class="name"><code>On</code></h3>
-    <span class="type">String</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._node-denon-client_lib_options_mute_options.js.html#l9"><code>..&#x2F;node-denon-client&#x2F;lib&#x2F;options&#x2F;mute_options.js:9</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The On attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> ON</p>
-
-
-</div>
-<div id="prop-Status" class="property item">
-    <h3 class="name"><code>Status</code></h3>
-    <span class="type">String</span>
-
-
-
-
-
-    <div class="meta">
-                <p>
-                Defined in
-        <a href="../files/.._node-denon-client_lib_options_mute_options.js.html#l23"><code>..&#x2F;node-denon-client&#x2F;lib&#x2F;options&#x2F;mute_options.js:23</code></a>
-        </p>
-
-
-    </div>
-
-    <div class="description">
-        <p>The Status attribute.</p>
-
-    </div>
-
-        <p><strong>Default:</strong> ?</p>
-
-
-</div>
-        </div>
-    </div>
-
-
-
                     </div>
                 </div>
             </div>

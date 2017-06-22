@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>../denon/lib/denon_client.js</title>
+    <title>../node-denon-client/lib/denon_client.js</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/DisplayDimOptions", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,7 @@
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
                 <li><a href="../classes/DenonClient.html">DenonClient</a></li>
+                <li><a href="../classes/DisplayDimOptions.html">DisplayDimOptions</a></li>
                 <li><a href="../classes/InputOptions.html">InputOptions</a></li>
                 <li><a href="../classes/MuteOptions.html">MuteOptions</a></li>
                 <li><a href="../classes/Options.html">Options</a></li>
@@ -77,7 +78,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>../denon/lib/denon_client.js <small>File</small></h1>
+    <h1>../node-denon-client/lib/denon_client.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -90,6 +91,7 @@ const _ = require(&#x27;lodash&#x27;);
 const Connection = require(&#x27;./connection&#x27;);
 const Options = require(&#x27;./options&#x27;);
 const DenonRegex = require(&#x27;./denon_regex&#x27;);
+const transformers = require(&#x27;./transformers&#x27;);
 
 /**
  * The Denon AVR RPC class.
@@ -103,9 +105,11 @@ class DenonClient extends Connection {
    *
    * @constructor
    * @param  {string} host [The Denon AVR address]
+   * @param  {number} port [The Denon AVR port, default 23]
+
    */
-  constructor(host) {
-    super(host);
+  constructor(host,port=23) {
+    super(host,port);
 
     this.regExTable = {
       &#x27;masterVolume&#x27;: {
@@ -114,7 +118,8 @@ class DenonClient extends Connection {
          * @event masterVolumeChanged
          * @param {object} volume The current volume
          */
-        emit: &#x27;masterVolumeChanged&#x27;
+        emit: &#x27;masterVolumeChanged&#x27;,
+        transform: transformers.volumeToHumanTransform
       },
       &#x27;masterVolumeMax&#x27;: {
         regEx: /(?:(MVMAX ))(?:(\d{2,3}))\r/,
@@ -122,7 +127,8 @@ class DenonClient extends Connection {
          * @event masterVolumeMaxChanged
          * @param {object} maxVolume The maximal volume
          */
-        emit: &#x27;masterVolumeMaxChanged&#x27;
+        emit: &#x27;masterVolumeMaxChanged&#x27;,
+        transform: transformers.volumeToHumanTransform
       },
       &#x27;mute&#x27;: {
         regEx: DenonRegex.constructStatusChangedRegex(Options.MuteOptions),
@@ -156,11 +162,24 @@ class DenonClient extends Connection {
          */
         emit: &#x27;surroundChanged&#x27;
       },
-    }
+      &#x27;displayDim&#x27;: {
+        regEx: DenonRegex.constructStatusChangedRegex(Options.DisplayDimOptions),
+        /**
+         * @event displayDimChanged
+         * @param {DisplayDimOptions} displayDim The current display dim status
+         */
+        emit: &#x27;displayDimChanged&#x27;
+      }
+    };
 
     this.on(&#x27;data&#x27;, (data) =&gt; {
       this._onData(data);
     });
+
+    // Tiny hack. When nothing listens to the error event,
+    // the &#x27;once&#x27; handler in the connect function won&#x27;t work.
+    // You are still able to grab the error event from the outside.
+    this.on(&#x27;error&#x27;, (error) =&gt; {});
   }
 
   getEvent(key)
@@ -184,14 +203,22 @@ class DenonClient extends Connection {
     //const expression = new RegExp(regEx);
     const keys = _(this.regExTable).keys();
     const matches = [];
-
+    
     _(keys).each((key) =&gt; {
+      
       const handler = this.regExTable[key];
       const match = data.match(handler.regEx);
 
       if (match != null) {
         const matchResult = handler;
-        matchResult.value = match[2];
+
+        // If the event hook has a transform method call it before applying the result value
+        if (matchResult.transform) {
+          matchResult.value = matchResult.transform(match[2]);
+        } else {
+          
+          matchResult.value = match[2];
+        }
 
         matches.push(matchResult);
       }
@@ -210,12 +237,12 @@ class DenonClient extends Connection {
    */
   _onData(data) {
     if (typeof data === &#x27;string&#x27;) {
-      const response = data.replace(&#x27;\r&#x27;, &#x27;&#x27;);
       const results = this._applyRegex(data);
 
       results.forEach((result) =&gt; {
+        
         this.emit(result.emit, result.value);
-      })
+      });
     }
   }
 
@@ -229,12 +256,20 @@ class DenonClient extends Connection {
    */
   sendCommand(command, parameter, hook) {
     return new Promise((resolve) =&gt; {
-      this.once(hook, (result) =&gt; {
-        resolve(result);
-      });
+
+      if (typeof hook === &#x27;string&#x27;) {
+        this.once(hook, (result) =&gt; {
+          resolve(result);
+        });
+      }
 
       return this
-        .write(&#x60;${command}${parameter}&#x60;);
+        .write(&#x60;${command}${parameter}&#x60;)
+        .then(() =&gt; {
+          if (typeof hook === &#x27;undefined&#x27;) {
+            resolve();
+          }
+        });
     })
   }
 
@@ -251,8 +286,9 @@ class DenonClient extends Connection {
    */
   setVolume(volumeOptions) {
 
-    return this.sendCommand(&#x27;MV&#x27;, volumeOptions,
-      this.getEvent(&#x27;masterVolume&#x27;));
+    const transformedVolume = transformers.volumeToAvrTransform(volumeOptions);
+
+    return this.sendCommand(&#x27;MV&#x27;, transformedVolume);
   }
 
   /**
@@ -363,12 +399,12 @@ class DenonClient extends Connection {
    *
    * @method setSurround
    * @param {SurroundOptions} surroundOptions [The surround option]
-   * @return {Promise} [A response]
+   * @return {Promise} [A response without any data]
    */
   setSurround(surroundOptions) {
 
-    return this.sendCommand(&#x27;MS&#x27;, surroundOptions,
-      this.getEvent(&#x27;surround&#x27;));
+    // Setting the surround option does not seem to return anything useful.
+    return this.sendCommand(&#x27;MS&#x27;, surroundOptions);
   }
 
   /**
@@ -381,6 +417,31 @@ class DenonClient extends Connection {
 
     return this.sendCommand(&#x27;MS&#x27;, Options.SurroundOptions.Status,
       this.getEvent(&#x27;surround&#x27;));
+  }
+
+  /**
+   * Returns the brightness level of the display
+   * 
+   * @method getBrightness
+   * @return {Promise}
+   */
+  getBrightness() {
+
+    return this.sendCommand(&#x27;SSDIM&#x27;, Options.DisplayDimOptions.Status, 
+      this.getEvent(&#x27;displayDim&#x27;));
+  }
+
+  /**
+   * Sets the brightness level of the display
+   * 
+   * @method setBrightness
+   * @param {DisplayDimOptions} brightnessLevel [Off, Low, Mid, High]
+   * @return {Promise}
+   */
+  setBrightness(brightnessLevel) {
+
+    return this.sendCommand(&#x27;SSDIM&#x27;, brightnessLevel, 
+      this.getEvent(&#x27;displayDim&#x27;));
   }
 }
 

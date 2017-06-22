@@ -1,8 +1,17 @@
 {
     "project": {},
     "files": {
-        "../denon/lib/options/input_options.js": {
-            "name": "../denon/lib/options/input_options.js",
+        "../node-denon-client/lib/options/display_dim_options.js": {
+            "name": "../node-denon-client/lib/options/display_dim_options.js",
+            "modules": {},
+            "classes": {
+                "DisplayDimOptions": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "../node-denon-client/lib/options/input_options.js": {
+            "name": "../node-denon-client/lib/options/input_options.js",
             "modules": {},
             "classes": {
                 "InputOptions": 1
@@ -10,8 +19,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "../denon/lib/options/mute_options.js": {
-            "name": "../denon/lib/options/mute_options.js",
+        "../node-denon-client/lib/options/mute_options.js": {
+            "name": "../node-denon-client/lib/options/mute_options.js",
             "modules": {},
             "classes": {
                 "MuteOptions": 1
@@ -19,8 +28,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "../denon/lib/options/power_options.js": {
-            "name": "../denon/lib/options/power_options.js",
+        "../node-denon-client/lib/options/power_options.js": {
+            "name": "../node-denon-client/lib/options/power_options.js",
             "modules": {},
             "classes": {
                 "PowerOptions": 1
@@ -28,8 +37,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "../denon/lib/options/surround_options.js": {
-            "name": "../denon/lib/options/surround_options.js",
+        "../node-denon-client/lib/options/surround_options.js": {
+            "name": "../node-denon-client/lib/options/surround_options.js",
             "modules": {},
             "classes": {
                 "SurroundOptions": 1
@@ -37,8 +46,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "../denon/lib/options/volume_options.js": {
-            "name": "../denon/lib/options/volume_options.js",
+        "../node-denon-client/lib/options/volume_options.js": {
+            "name": "../node-denon-client/lib/options/volume_options.js",
             "modules": {},
             "classes": {
                 "VolumeOptions": 1
@@ -46,8 +55,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "../denon/lib/denon_client.js": {
-            "name": "../denon/lib/denon_client.js",
+        "../node-denon-client/lib/denon_client.js": {
+            "name": "../node-denon-client/lib/denon_client.js",
             "modules": {},
             "classes": {
                 "DenonClient": 1
@@ -55,8 +64,8 @@
             "fors": {},
             "namespaces": {}
         },
-        "../denon/lib/options.js": {
-            "name": "../denon/lib/options.js",
+        "../node-denon-client/lib/options.js": {
+            "name": "../node-denon-client/lib/options.js",
             "modules": {},
             "classes": {
                 "Options": 1
@@ -67,6 +76,18 @@
     },
     "modules": {},
     "classes": {
+        "DisplayDimOptions": {
+            "name": "DisplayDimOptions",
+            "shortname": "DisplayDimOptions",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../node-denon-client/lib/options/display_dim_options.js",
+            "line": 3,
+            "description": "The input options"
+        },
         "InputOptions": {
             "name": "InputOptions",
             "shortname": "InputOptions",
@@ -75,8 +96,8 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/options/input_options.js",
-            "line": 5,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 3,
             "description": "The input options"
         },
         "MuteOptions": {
@@ -87,7 +108,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/options/mute_options.js",
+            "file": "../node-denon-client/lib/options/mute_options.js",
             "line": 3,
             "description": "The mute options"
         },
@@ -99,7 +120,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/options/power_options.js",
+            "file": "../node-denon-client/lib/options/power_options.js",
             "line": 3,
             "description": "The power options"
         },
@@ -111,7 +132,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 3,
             "description": "The surround options"
         },
@@ -123,7 +144,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/options/volume_options.js",
+            "file": "../node-denon-client/lib/options/volume_options.js",
             "line": 3,
             "description": "The volume options"
         },
@@ -135,8 +156,8 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/denon_client.js",
-            "line": 10,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 11,
             "description": "The Denon AVR RPC class.",
             "extends": "EventEmitter"
         },
@@ -148,7 +169,7 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "../denon/lib/options.js",
+            "file": "../node-denon-client/lib/options.js",
             "line": 8,
             "description": "Offers option classes to ease requests."
         }
@@ -156,8 +177,70 @@
     "elements": {},
     "classitems": [
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 11,
+            "file": "../node-denon-client/lib/options/display_dim_options.js",
+            "line": 9,
+            "description": "The Low attribute.",
+            "default": "Low",
+            "itemtype": "property",
+            "name": "Low",
+            "type": "String",
+            "class": "DisplayDimOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/display_dim_options.js",
+            "line": 16,
+            "description": "The Mid attribute.",
+            "default": "Mid",
+            "itemtype": "property",
+            "name": "Mid",
+            "type": "String",
+            "class": "DisplayDimOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/display_dim_options.js",
+            "line": 23,
+            "description": "The High attribute.",
+            "default": "High",
+            "itemtype": "property",
+            "name": "High",
+            "type": "String",
+            "class": "DisplayDimOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/display_dim_options.js",
+            "line": 30,
+            "description": "The Off attribute.",
+            "default": "Off",
+            "itemtype": "property",
+            "name": "Off",
+            "type": "String",
+            "class": "DisplayDimOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/display_dim_options.js",
+            "line": 37,
+            "description": "The Status attribute.",
+            "default": "?",
+            "itemtype": "property",
+            "name": "Status",
+            "type": "String",
+            "class": "DisplayDimOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/display_dim_options.js",
+            "line": 44,
+            "description": "The Base attribute.",
+            "default": "SI",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "Base",
+            "type": "String",
+            "class": "DisplayDimOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 9,
             "description": "The CD attribute.",
             "default": "CD",
             "itemtype": "property",
@@ -166,8 +249,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 18,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 16,
             "description": "The Tuner attribute.",
             "default": "TUNER",
             "itemtype": "property",
@@ -176,8 +259,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 25,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 23,
             "description": "The DVD attribute.",
             "default": "DVD",
             "itemtype": "property",
@@ -186,8 +269,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 32,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 30,
             "description": "The BD attribute.",
             "default": "BD",
             "itemtype": "property",
@@ -196,8 +279,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 39,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 37,
             "description": "The TV attribute.",
             "default": "TV",
             "itemtype": "property",
@@ -206,18 +289,18 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 46,
-            "description": "The Sattelite attribute.",
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 44,
+            "description": "The Sattalite attribute.",
             "default": "SAT/CBL",
             "itemtype": "property",
-            "name": "Sattelite",
+            "name": "Sattalite",
             "type": "String",
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 53,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 51,
             "description": "The Cable attribute.",
             "default": "SAT/CBL",
             "itemtype": "property",
@@ -226,8 +309,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 60,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 58,
             "description": "The MediaPlayer attribute.",
             "default": "SMPLAY",
             "itemtype": "property",
@@ -236,8 +319,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 67,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 65,
             "description": "The Game attribute.",
             "default": "GAME",
             "itemtype": "property",
@@ -246,8 +329,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 74,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 72,
             "description": "The Aux1 attribute.",
             "default": "AUX1",
             "itemtype": "property",
@@ -256,8 +339,18 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 81,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 79,
+            "description": "The Aux2 attribute.",
+            "default": "AUX2",
+            "itemtype": "property",
+            "name": "Aux2",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 86,
             "description": "The Net attribute.",
             "default": "NET",
             "itemtype": "property",
@@ -266,8 +359,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 88,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 93,
             "description": "The USB attribute.",
             "default": "USB",
             "itemtype": "property",
@@ -276,8 +369,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 95,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 100,
             "description": "The IPod attribute.",
             "default": "USB/IPOD",
             "itemtype": "property",
@@ -286,8 +379,28 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 102,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 107,
+            "description": "The MPlay attribute.",
+            "default": "MPLAY",
+            "itemtype": "property",
+            "name": "MPlay",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 114,
+            "description": "The MXPort attribute.",
+            "default": "MXPORT",
+            "itemtype": "property",
+            "name": "MXPort",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 121,
             "description": "The Status attribute.",
             "default": "?",
             "itemtype": "property",
@@ -296,8 +409,8 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/input_options.js",
-            "line": 109,
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 128,
             "description": "The Base attribute.",
             "default": "SI",
             "access": "private",
@@ -308,7 +421,7 @@
             "class": "InputOptions"
         },
         {
-            "file": "../denon/lib/options/mute_options.js",
+            "file": "../node-denon-client/lib/options/mute_options.js",
             "line": 9,
             "description": "The On attribute.",
             "default": "ON",
@@ -318,7 +431,7 @@
             "class": "MuteOptions"
         },
         {
-            "file": "../denon/lib/options/mute_options.js",
+            "file": "../node-denon-client/lib/options/mute_options.js",
             "line": 16,
             "description": "The Off attribute.",
             "default": "OFF",
@@ -328,7 +441,7 @@
             "class": "MuteOptions"
         },
         {
-            "file": "../denon/lib/options/mute_options.js",
+            "file": "../node-denon-client/lib/options/mute_options.js",
             "line": 23,
             "description": "The Status attribute.",
             "default": "?",
@@ -338,7 +451,7 @@
             "class": "MuteOptions"
         },
         {
-            "file": "../denon/lib/options/mute_options.js",
+            "file": "../node-denon-client/lib/options/mute_options.js",
             "line": 30,
             "description": "The Base attribute.",
             "default": "MU",
@@ -350,7 +463,7 @@
             "class": "MuteOptions"
         },
         {
-            "file": "../denon/lib/options/power_options.js",
+            "file": "../node-denon-client/lib/options/power_options.js",
             "line": 9,
             "description": "The On attribute.",
             "default": "ON",
@@ -360,7 +473,7 @@
             "class": "PowerOptions"
         },
         {
-            "file": "../denon/lib/options/power_options.js",
+            "file": "../node-denon-client/lib/options/power_options.js",
             "line": 16,
             "description": "The Off attribute.",
             "default": "OFF",
@@ -370,7 +483,7 @@
             "class": "PowerOptions"
         },
         {
-            "file": "../denon/lib/options/power_options.js",
+            "file": "../node-denon-client/lib/options/power_options.js",
             "line": 23,
             "description": "The Status attribute.",
             "default": "?",
@@ -380,7 +493,7 @@
             "class": "PowerOptions"
         },
         {
-            "file": "../denon/lib/options/power_options.js",
+            "file": "../node-denon-client/lib/options/power_options.js",
             "line": 30,
             "description": "The Base attribute.",
             "default": "PW",
@@ -392,7 +505,7 @@
             "class": "PowerOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 9,
             "description": "The Movie attribute.",
             "default": "MOVIE",
@@ -402,7 +515,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 16,
             "description": "The Music attribute.",
             "default": "MUSIC",
@@ -412,7 +525,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 23,
             "description": "The Game attribute.",
             "default": "GAME",
@@ -422,7 +535,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 30,
             "description": "The PureDirect attribute.",
             "default": "PURE DIRECT",
@@ -432,7 +545,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 37,
             "description": "The Direct attribute.",
             "default": "DIRECT",
@@ -442,7 +555,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 44,
             "description": "The Stereo attribute.",
             "default": "Stereo",
@@ -452,7 +565,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 51,
             "description": "The Standard attribute.",
             "default": "STANDARD",
@@ -462,7 +575,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 58,
             "description": "The DolbyDigital attribute.",
             "default": "DOLBY DIGITAL",
@@ -472,7 +585,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 65,
             "description": "The DtsSurround attribute.",
             "default": "DTS SURROUND",
@@ -482,7 +595,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 72,
             "description": "The MchStereo attribute.",
             "default": "MCH STEREO",
@@ -492,7 +605,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 79,
             "description": "The RockArena attribute.",
             "default": "ROCK ARENA",
@@ -502,7 +615,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 86,
             "description": "The JazzClub attribute.",
             "default": "JAZZ CLUB",
@@ -512,7 +625,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 93,
             "description": "The MonoMovie attribute.",
             "default": "MONO MOVIE",
@@ -522,7 +635,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 100,
             "description": "The Matrix attribute.",
             "default": "MATRIX",
@@ -532,7 +645,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 107,
             "description": "The VideoGame attribute.",
             "default": "VIDEO GAME",
@@ -542,7 +655,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 114,
             "description": "The Virtual attribute.",
             "default": "Virtual",
@@ -552,7 +665,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 121,
             "description": "The Status attribute.",
             "default": "?",
@@ -562,7 +675,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/surround_options.js",
+            "file": "../node-denon-client/lib/options/surround_options.js",
             "line": 128,
             "description": "The Base attribute.",
             "default": "MS",
@@ -574,7 +687,7 @@
             "class": "SurroundOptions"
         },
         {
-            "file": "../denon/lib/options/volume_options.js",
+            "file": "../node-denon-client/lib/options/volume_options.js",
             "line": 9,
             "description": "The Up attribute.",
             "default": "UP",
@@ -584,7 +697,7 @@
             "class": "VolumeOptions"
         },
         {
-            "file": "../denon/lib/options/volume_options.js",
+            "file": "../node-denon-client/lib/options/volume_options.js",
             "line": 16,
             "description": "The Down attribute.",
             "default": "DOWN",
@@ -594,7 +707,7 @@
             "class": "VolumeOptions"
         },
         {
-            "file": "../denon/lib/options/volume_options.js",
+            "file": "../node-denon-client/lib/options/volume_options.js",
             "line": 23,
             "description": "The Status attribute.",
             "default": "?",
@@ -604,7 +717,7 @@
             "class": "VolumeOptions"
         },
         {
-            "file": "../denon/lib/options/volume_options.js",
+            "file": "../node-denon-client/lib/options/volume_options.js",
             "line": 30,
             "description": "The Base attribute.",
             "default": "MV",
@@ -616,8 +729,8 @@
             "class": "VolumeOptions"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 17,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 18,
             "description": "Initializes the telnet connection and sets up events.",
             "is_constructor": 1,
             "params": [
@@ -625,13 +738,18 @@
                     "name": "host",
                     "description": "[The Denon AVR address]",
                     "type": "String"
+                },
+                {
+                    "name": "port",
+                    "description": "[The Denon AVR port, default 23]",
+                    "type": "Number"
                 }
             ],
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 29,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 32,
             "itemtype": "event",
             "name": "masterVolumeChanged",
             "params": [
@@ -644,8 +762,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 37,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 41,
             "itemtype": "event",
             "name": "masterVolumeMaxChanged",
             "params": [
@@ -658,8 +776,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 45,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 50,
             "itemtype": "event",
             "name": "muteChanged",
             "params": [
@@ -672,8 +790,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 53,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 58,
             "itemtype": "event",
             "name": "inputChanged",
             "params": [
@@ -686,8 +804,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 61,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 66,
             "itemtype": "event",
             "name": "powerChanged",
             "params": [
@@ -700,8 +818,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 69,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 74,
             "itemtype": "event",
             "name": "surroundChanged",
             "params": [
@@ -714,8 +832,22 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 91,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 82,
+            "itemtype": "event",
+            "name": "displayDimChanged",
+            "params": [
+                {
+                    "name": "displayDim",
+                    "description": "The current display dim status",
+                    "type": "DisplayDimOptions"
+                }
+            ],
+            "class": "DenonClient"
+        },
+        {
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 109,
             "description": "Does the RegEx magic.",
             "itemtype": "method",
             "name": "_applyRegex",
@@ -735,8 +867,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 119,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 145,
             "description": "Receives the incoming data. Does some RegEx magic.\nCalls the defined events and resolves promises.",
             "itemtype": "method",
             "name": "_onData",
@@ -752,8 +884,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 138,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 164,
             "description": "Sends a command to the Denon AVR",
             "itemtype": "method",
             "name": "sendCommand",
@@ -776,8 +908,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 157,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 191,
             "description": "Sets the volume of the Denon AVR.\nUse {VolumeOptions} or a number from 0-98.\n\n80=80(0dB), 00=-0(--dB)(MIN)\nVolumeOptions.Up / VolumeOptions.Down",
             "itemtype": "method",
             "name": "setVolume",
@@ -795,8 +927,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 174,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 209,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
@@ -807,8 +939,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 186,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 221,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
@@ -819,8 +951,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 198,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 233,
             "description": "Sets the power mode of the Denon AVR. (On / Standby).\nUse {PowerOptions}.",
             "itemtype": "method",
             "name": "setPower",
@@ -838,8 +970,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 212,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 247,
             "description": "Returns the current power status of the Denon AVR.",
             "itemtype": "method",
             "name": "getPower",
@@ -850,8 +982,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 224,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 259,
             "description": "Sets the mute status of the Denon AVR. (On / Off).\nUse {MuteOptions}.",
             "itemtype": "method",
             "name": "setMute",
@@ -869,8 +1001,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 238,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 273,
             "description": "Returns the current mute status of the Denon AVR.",
             "itemtype": "method",
             "name": "getMute",
@@ -881,8 +1013,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 250,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 285,
             "description": "Sets the active input of the Denon AVR. (TV, DVD, ...).\nUse {InputOptions}.",
             "itemtype": "method",
             "name": "setInput",
@@ -900,8 +1032,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 264,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 299,
             "description": "Returns the current active input source (TV, DVD, ...) of the Denon AVR.",
             "itemtype": "method",
             "name": "getInput",
@@ -912,8 +1044,8 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 276,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 311,
             "description": "Sets the surround mode of the Denon AVR. (Dolby, Stereo, ...).\nUse {SurroundOptions}.",
             "itemtype": "method",
             "name": "setSurround",
@@ -925,14 +1057,14 @@
                 }
             ],
             "return": {
-                "description": "[A response]",
+                "description": "[A response without any data]",
                 "type": "Promise"
             },
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/denon_client.js",
-            "line": 290,
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 325,
             "description": "Returns the current surround mode of the Denon AVR.",
             "itemtype": "method",
             "name": "getSurround",
@@ -943,7 +1075,38 @@
             "class": "DenonClient"
         },
         {
-            "file": "../denon/lib/options.js",
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 337,
+            "description": "Returns the brightness level of the display",
+            "itemtype": "method",
+            "name": "getBrightness",
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "DenonClient"
+        },
+        {
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 349,
+            "description": "Sets the brightness level of the display",
+            "itemtype": "method",
+            "name": "setBrightness",
+            "params": [
+                {
+                    "name": "brightnessLevel",
+                    "description": "[Off, Low, Mid, High]",
+                    "type": "DisplayDimOptions"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Promise"
+            },
+            "class": "DenonClient"
+        },
+        {
+            "file": "../node-denon-client/lib/options.js",
             "line": 15,
             "itemtype": "property",
             "name": "InputOptions",
@@ -951,7 +1114,7 @@
             "class": "Options"
         },
         {
-            "file": "../denon/lib/options.js",
+            "file": "../node-denon-client/lib/options.js",
             "line": 20,
             "itemtype": "property",
             "name": "MuteOptions",
@@ -959,7 +1122,7 @@
             "class": "Options"
         },
         {
-            "file": "../denon/lib/options.js",
+            "file": "../node-denon-client/lib/options.js",
             "line": 25,
             "itemtype": "property",
             "name": "PowerOptions",
@@ -967,7 +1130,7 @@
             "class": "Options"
         },
         {
-            "file": "../denon/lib/options.js",
+            "file": "../node-denon-client/lib/options.js",
             "line": 30,
             "itemtype": "property",
             "name": "SurroundOptions",
@@ -975,18 +1138,26 @@
             "class": "Options"
         },
         {
-            "file": "../denon/lib/options.js",
+            "file": "../node-denon-client/lib/options.js",
             "line": 35,
             "itemtype": "property",
             "name": "VolumeOptions",
             "type": "{VolumeOptions}",
+            "class": "Options"
+        },
+        {
+            "file": "../node-denon-client/lib/options.js",
+            "line": 41,
+            "itemtype": "property",
+            "name": "DisplayDimOptions",
+            "type": "{DisplayDimOptions}",
             "class": "Options"
         }
     ],
     "warnings": [
         {
             "message": "Missing item type\nInitializes the telnet connection and sets up events.",
-            "line": " ../denon/lib/denon_client.js:17"
+            "line": " ../node-denon-client/lib/denon_client.js:18"
         }
     ]
 }

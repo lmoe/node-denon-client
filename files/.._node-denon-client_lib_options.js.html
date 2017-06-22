@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>../denon/lib/options/input_options.js</title>
+    <title>../node-denon-client/lib/options.js</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/DisplayDimOptions", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,7 @@
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
                 <li><a href="../classes/DenonClient.html">DenonClient</a></li>
+                <li><a href="../classes/DisplayDimOptions.html">DisplayDimOptions</a></li>
                 <li><a href="../classes/InputOptions.html">InputOptions</a></li>
                 <li><a href="../classes/MuteOptions.html">MuteOptions</a></li>
                 <li><a href="../classes/Options.html">Options</a></li>
@@ -77,146 +78,57 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>../denon/lib/options/input_options.js <small>File</small></h1>
+    <h1>../node-denon-client/lib/options.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-&#x27;use strict&#x27;;
-
-const _ = require(&#x27;lodash&#x27;);
+const InputOptions = require(&#x27;./options/input_options&#x27;);
+const MuteOptions = require(&#x27;./options/mute_options&#x27;);
+const PowerOptions = require(&#x27;./options/power_options&#x27;);
+const SurroundOptions = require(&#x27;./options/surround_options&#x27;);
+const VolumeOptions = require(&#x27;./options/volume_options&#x27;);
+const DisplayDimOptions = require(&#x27;./options/display_dim_options&#x27;);
 
 /**
- * The input options
+ * Offers option classes to ease requests.
  *
- * @class InputOptions
+ * @class Options
  */
 
-/**
-* The CD attribute.
-*
-* @default CD
-* @property {string} CD
-*/
+module.exports = {
+  /**
+   * @property InputOptions
+   * @type {InputOptions}
+   */
+  InputOptions: InputOptions,
+  /**
+   * @property MuteOptions
+   * @type {MuteOptions}
+   */
+  MuteOptions: MuteOptions,
+  /**
+   * @property PowerOptions
+   * @type {PowerOptions}
+   */
+  PowerOptions: PowerOptions,
+  /**
+   * @property SurroundOptions
+   * @type {SurroundOptions}
+   */
+  SurroundOptions: SurroundOptions,
+  /**
+   * @property VolumeOptions
+   * @type {VolumeOptions}
+   */
+  VolumeOptions: VolumeOptions,
 
-/**
-* The Tuner attribute.
-*
-* @default TUNER
-* @property {string} Tuner
-*/
-
-/**
-* The DVD attribute.
-*
-* @default DVD
-* @property {string} DVD
-*/
-
-/**
-* The BD attribute.
-*
-* @default BD
-* @property {string} BD
-*/
-
-/**
-* The TV attribute.
-*
-* @default TV
-* @property {string} TV
-*/
-
-/**
-* The Sattelite attribute.
-*
-* @default SAT/CBL
-* @property {string} Sattelite
-*/
-
-/**
-* The Cable attribute.
-*
-* @default SAT/CBL
-* @property {string} Cable
-*/
-
-/**
-* The MediaPlayer attribute.
-*
-* @default SMPLAY
-* @property {string} MediaPlayer
-*/
-
-/**
-* The Game attribute.
-*
-* @default GAME
-* @property {string} Game
-*/
-
-/**
-* The Aux1 attribute.
-*
-* @default AUX1
-* @property {string} Aux1
-*/
-
-/**
-* The Net attribute.
-*
-* @default NET
-* @property {string} Net
-*/
-
-/**
-* The USB attribute.
-*
-* @default USB
-* @property {string} USB
-*/
-
-/**
-* The IPod attribute.
-*
-* @default USB/IPOD
-* @property {string} IPod
-*/
-
-/**
-* The Status attribute.
-*
-* @default ?
-* @property {string} Status
-*/
-
-/**
-* The Base attribute.
-*
-* @default SI
-* @private
-* @property {string} Base
-*/
-
-const InputOptions = {
-    CD: &#x27;CD&#x27;,
-    Tuner: &#x27;TUNER&#x27;,
-    DVD: &#x27;DVD&#x27;,
-    BD: &#x27;BD&#x27;,
-    TV: &#x27;TV&#x27;,
-    Sattelite: &#x27;SAT/CBL&#x27;,
-    Cable: &#x27;SAT/CBL&#x27;,
-    MediaPlayer: &#x27;SMPLAY&#x27;,
-    Game: &#x27;GAME&#x27;,
-    Aux1: &#x27;AUX1&#x27;,
-    Net: &#x27;NET&#x27;,
-    IPod: &#x27;USB/IPOD&#x27;,
-    USB: &#x27;USB&#x27;,    
-    Status: &#x27;?&#x27;,
-    Base: &#x27;SI&#x27;
-};
-
-module.exports = InputOptions;
+  /**
+   * @property DisplayDimOptions
+   * @type {DisplayDimOptions}
+   */
+  DisplayDimOptions: DisplayDimOptions,
+}
 
     </pre>
 </div>

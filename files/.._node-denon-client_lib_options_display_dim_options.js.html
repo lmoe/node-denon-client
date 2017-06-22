@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>../denon/lib/options/volume_options.js</title>
+    <title>../node-denon-client/lib/options/display_dim_options.js</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/DisplayDimOptions", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,7 @@
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
                 <li><a href="../classes/DenonClient.html">DenonClient</a></li>
+                <li><a href="../classes/DisplayDimOptions.html">DisplayDimOptions</a></li>
                 <li><a href="../classes/InputOptions.html">InputOptions</a></li>
                 <li><a href="../classes/MuteOptions.html">MuteOptions</a></li>
                 <li><a href="../classes/Options.html">Options</a></li>
@@ -77,7 +78,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>../denon/lib/options/volume_options.js <small>File</small></h1>
+    <h1>../node-denon-client/lib/options/display_dim_options.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -85,23 +86,37 @@
 &#x27;use strict&#x27;;
 
 /**
- * The volume options
+ * The input options
  *
- * @class VolumeOptions
+ * @class DisplayDimOptions
  */
 
 /**
-* The Up attribute.
+* The Low attribute. 
 *
-* @default UP
-* @property {string} Up
+* @default Low
+* @property {string} Low
 */
 
 /**
-* The Down attribute.
+* The Mid attribute. 
 *
-* @default DOWN
-* @property {string} Down
+* @default Mid
+* @property {string} Mid
+*/
+
+/**
+* The High attribute. 
+*
+* @default High
+* @property {string} High
+*/
+
+/**
+* The Off attribute. 
+*
+* @default Off
+* @property {string} Off
 */
 
 /**
@@ -114,17 +129,21 @@
 /**
 * The Base attribute.
 *
-* @default MV
+* @default SI
 * @private
 * @property {string} Base
 */
 
-module.exports = {
-  Up: &#x27;UP&#x27;,
-  Down: &#x27;DOWN&#x27;,
-  Status: &#x27;?&#x27;,
-  Base: &#x27;MV&#x27;
+const DisplayDimOptions = {
+    Low: &#x27; DAR&#x27;,
+    Mid: &#x27; DIM&#x27;,
+    High: &#x27; BRI&#x27;,
+    Off: &#x27; OFF&#x27;,
+    Status: &#x27; ?&#x27;,
+    Base: &#x27;SSDIM&#x27;
 };
+
+module.exports = DisplayDimOptions;
 
     </pre>
 </div>

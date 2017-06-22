@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>../denon/lib/options.js</title>
+    <title>../node-denon-client/lib/options/power_options.js</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/DisplayDimOptions", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,7 @@
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
                 <li><a href="../classes/DenonClient.html">DenonClient</a></li>
+                <li><a href="../classes/DisplayDimOptions.html">DisplayDimOptions</a></li>
                 <li><a href="../classes/InputOptions.html">InputOptions</a></li>
                 <li><a href="../classes/MuteOptions.html">MuteOptions</a></li>
                 <li><a href="../classes/Options.html">Options</a></li>
@@ -77,50 +78,53 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>../denon/lib/options.js <small>File</small></h1>
+    <h1>../node-denon-client/lib/options/power_options.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
-const InputOptions = require(&#x27;./options/input_options&#x27;);
-const MuteOptions = require(&#x27;./options/mute_options&#x27;);
-const PowerOptions = require(&#x27;./options/power_options&#x27;);
-const SurroundOptions = require(&#x27;./options/surround_options&#x27;);
-const VolumeOptions = require(&#x27;./options/volume_options&#x27;);
-
+&#x27;use strict&#x27;;
 
 /**
- * Offers option classes to ease requests.
+ * The power options
  *
- * @class Options
+ * @class PowerOptions
  */
 
+/**
+* The On attribute.
+*
+* @default ON
+* @property {string} On
+*/
+
+/**
+* The Off attribute.
+*
+* @default OFF
+* @property {string} Off
+*/
+
+/**
+* The Status attribute.
+*
+* @default ?
+* @property {string} Status
+*/
+
+/**
+* The Base attribute.
+*
+* @default PW
+* @private
+* @property {string} Base
+*/
+
 module.exports = {
-  /**
-   * @property InputOptions
-   * @type {InputOptions}
-   */
-  InputOptions: InputOptions,
-  /**
-   * @property MuteOptions
-   * @type {MuteOptions}
-   */
-  MuteOptions: MuteOptions,
-  /**
-   * @property PowerOptions
-   * @type {PowerOptions}
-   */
-  PowerOptions: PowerOptions,
-  /**
-   * @property SurroundOptions
-   * @type {SurroundOptions}
-   */
-  SurroundOptions: SurroundOptions,
-  /**
-   * @property VolumeOptions
-   * @type {VolumeOptions}
-   */
-  VolumeOptions: VolumeOptions
+  On: &#x27;ON&#x27;,
+  Standby: &#x27;STANDBY&#x27;,
+  Status: &#x27;?&#x27;,
+  Base: &#x27;PW&#x27;
 }
 
     </pre>
