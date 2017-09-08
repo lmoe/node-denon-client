@@ -331,6 +331,46 @@
         {
             "file": "../node-denon-client/lib/options/input_options.js",
             "line": 72,
+            "description": "The Game2 attribute.",
+            "default": "GAME2",
+            "itemtype": "property",
+            "name": "Game2",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 79,
+            "description": "The Dock attribute.",
+            "default": "DOCK",
+            "itemtype": "property",
+            "name": "Dock",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 86,
+            "description": "The VAux attribute.",
+            "default": "V.AUX",
+            "itemtype": "property",
+            "name": "VAux",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 93,
+            "description": "The NetUsb attribute.",
+            "default": "NET/USB",
+            "itemtype": "property",
+            "name": "NetUsb",
+            "type": "String",
+            "class": "InputOptions"
+        },
+        {
+            "file": "../node-denon-client/lib/options/input_options.js",
+            "line": 100,
             "description": "The Aux1 attribute.",
             "default": "AUX1",
             "itemtype": "property",
@@ -340,7 +380,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 79,
+            "line": 107,
             "description": "The Aux2 attribute.",
             "default": "AUX2",
             "itemtype": "property",
@@ -350,7 +390,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 86,
+            "line": 114,
             "description": "The Net attribute.",
             "default": "NET",
             "itemtype": "property",
@@ -360,7 +400,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 93,
+            "line": 121,
             "description": "The USB attribute.",
             "default": "USB",
             "itemtype": "property",
@@ -370,7 +410,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 100,
+            "line": 128,
             "description": "The IPod attribute.",
             "default": "USB/IPOD",
             "itemtype": "property",
@@ -380,7 +420,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 107,
+            "line": 135,
             "description": "The MPlay attribute.",
             "default": "MPLAY",
             "itemtype": "property",
@@ -390,7 +430,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 114,
+            "line": 142,
             "description": "The MXPort attribute.",
             "default": "MXPORT",
             "itemtype": "property",
@@ -400,7 +440,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 121,
+            "line": 149,
             "description": "The Status attribute.",
             "default": "?",
             "itemtype": "property",
@@ -410,7 +450,7 @@
         },
         {
             "file": "../node-denon-client/lib/options/input_options.js",
-            "line": 128,
+            "line": 156,
             "description": "The Base attribute.",
             "default": "SI",
             "access": "private",
