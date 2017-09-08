@@ -70,6 +70,9 @@ denonClient
 
 # Changelog
 
+## 0.2.3
+- Extended input options (Game2, Dock, VAux, NetUsb). (Thanks to @MrFjellstad)
+
 ## 0.2.1 - 0.2.2
 - Update Readme
 
