@@ -1,4 +1,4 @@
-# denon-avr
+# denon-client
 A handy node library which allows you to control and receive events of a Denon AVR.
 
 # Few words
@@ -69,6 +69,9 @@ denonClient
 ```
 
 # Changelog
+
+## 0.2.4
+- Added Zone2 control (ON, OFF, DOWN, UP). (Thanks to @jzucker2)
 
 ## 0.2.3
 - Extended input options (Game2, Dock, VAux, NetUsb). (Thanks to @MrFjellstad)
