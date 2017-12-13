@@ -26,7 +26,7 @@
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/DisplayDimOptions", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/DenonClient", "classes/DisplayDimOptions", "classes/InputOptions", "classes/MuteOptions", "classes/Options", "classes/PowerOptions", "classes/SurroundOptions", "classes/VolumeOptions", "classes/Zone2Options"]'>
         </form>
     </div>
 </div>
@@ -45,6 +45,7 @@
                 <li><a href="../classes/PowerOptions.html">PowerOptions</a></li>
                 <li><a href="../classes/SurroundOptions.html">SurroundOptions</a></li>
                 <li><a href="../classes/VolumeOptions.html">VolumeOptions</a></li>
+                <li><a href="../classes/Zone2Options.html">Zone2Options</a></li>
         </ul>
     </div>
     </div>
@@ -169,6 +170,14 @@ class DenonClient extends Connection {
          * @param {DisplayDimOptions} displayDim The current display dim status
          */
         emit: &#x27;displayDimChanged&#x27;
+      },
+      &#x27;zone2&#x27;: {
+        regEx: DenonRegex.constructStatusChangedRegex(Options.Zone2Options),
+        /**
+         * @event zone2Changed
+         * @param {Zone2Options} zone2Status The current display dim status
+         */
+        emit: &#x27;zone2Changed&#x27;
       }
     };
 
@@ -203,9 +212,9 @@ class DenonClient extends Connection {
     //const expression = new RegExp(regEx);
     const keys = _(this.regExTable).keys();
     const matches = [];
-    
+
     _(keys).each((key) =&gt; {
-      
+
       const handler = this.regExTable[key];
       const match = data.match(handler.regEx);
 
@@ -216,7 +225,7 @@ class DenonClient extends Connection {
         if (matchResult.transform) {
           matchResult.value = matchResult.transform(match[2]);
         } else {
-          
+
           matchResult.value = match[2];
         }
 
@@ -240,7 +249,7 @@ class DenonClient extends Connection {
       const results = this._applyRegex(data);
 
       results.forEach((result) =&gt; {
-        
+
         this.emit(result.emit, result.value);
       });
     }
@@ -342,6 +351,32 @@ class DenonClient extends Connection {
   }
 
   /**
+   * Sets the zone 2 state of the Denon AVR. (On / Off).
+   * Use {Zone2Options}.
+   *
+   * @method setZone2
+   * @param {Zone2Options} zone2Options [The zone2 option]
+   * @return {Promise} [A response]
+   */
+  setZone2(zone2Options) {
+
+    return this.sendCommand(&#x27;Z2&#x27;, zone2Options,
+      this.getEvent(&#x27;zone2&#x27;));
+  }
+
+  /**
+   * Returns the current zone 2 status of the Denon AVR.
+   *
+   * @method getZone2
+   * @return {Promise} [A response]
+   */
+  getZone2() {
+
+    return this.sendCommand(&#x27;Z2&#x27;, Options.Zone2Options.Status,
+      this.getEvent(&#x27;zone2&#x27;));
+  }
+
+  /**
    * Sets the mute status of the Denon AVR. (On / Off).
    * Use {MuteOptions}.
    *
@@ -421,26 +456,26 @@ class DenonClient extends Connection {
 
   /**
    * Returns the brightness level of the display
-   * 
+   *
    * @method getBrightness
    * @return {Promise}
    */
   getBrightness() {
 
-    return this.sendCommand(&#x27;SSDIM&#x27;, Options.DisplayDimOptions.Status, 
+    return this.sendCommand(&#x27;SSDIM&#x27;, Options.DisplayDimOptions.Status,
       this.getEvent(&#x27;displayDim&#x27;));
   }
 
   /**
    * Sets the brightness level of the display
-   * 
+   *
    * @method setBrightness
    * @param {DisplayDimOptions} brightnessLevel [Off, Low, Mid, High]
    * @return {Promise}
    */
   setBrightness(brightnessLevel) {
 
-    return this.sendCommand(&#x27;SSDIM&#x27;, brightnessLevel, 
+    return this.sendCommand(&#x27;SSDIM&#x27;, brightnessLevel,
       this.getEvent(&#x27;displayDim&#x27;));
   }
 }

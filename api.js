@@ -8,7 +8,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "Options",
         "PowerOptions",
         "SurroundOptions",
-        "VolumeOptions"
+        "VolumeOptions",
+        "Zone2Options"
     ],
     "modules": [],
     "allModules": [],

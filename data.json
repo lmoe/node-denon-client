@@ -55,6 +55,15 @@
             "fors": {},
             "namespaces": {}
         },
+        "../node-denon-client/lib/options/zone_2_options.js": {
+            "name": "../node-denon-client/lib/options/zone_2_options.js",
+            "modules": {},
+            "classes": {
+                "Zone2Options": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "../node-denon-client/lib/denon_client.js": {
             "name": "../node-denon-client/lib/denon_client.js",
             "modules": {},
@@ -148,6 +157,18 @@
             "line": 3,
             "description": "The volume options"
         },
+        "Zone2Options": {
+            "name": "Zone2Options",
+            "shortname": "Zone2Options",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "../node-denon-client/lib/options/zone_2_options.js",
+            "line": 3,
+            "description": "The zone 2 options"
+        },
         "DenonClient": {
             "name": "DenonClient",
             "shortname": "DenonClient",
@@ -170,7 +191,7 @@
             "plugin_for": [],
             "extension_for": [],
             "file": "../node-denon-client/lib/options.js",
-            "line": 8,
+            "line": 9,
             "description": "Offers option classes to ease requests."
         }
     },
@@ -769,6 +790,68 @@
             "class": "VolumeOptions"
         },
         {
+            "file": "../node-denon-client/lib/options/zone_2_options.js",
+            "line": 9,
+            "description": "The Volume Up attribute.",
+            "default": "UP",
+            "itemtype": "property",
+            "name": "Up",
+            "type": "String",
+            "class": "Zone2Options"
+        },
+        {
+            "file": "../node-denon-client/lib/options/zone_2_options.js",
+            "line": 16,
+            "description": "The Volume Down attribute.",
+            "default": "DOWN",
+            "itemtype": "property",
+            "name": "Down",
+            "type": "String",
+            "class": "Zone2Options"
+        },
+        {
+            "file": "../node-denon-client/lib/options/zone_2_options.js",
+            "line": 23,
+            "description": "The On attribute.",
+            "default": "ON",
+            "itemtype": "property",
+            "name": "On",
+            "type": "String",
+            "class": "Zone2Options"
+        },
+        {
+            "file": "../node-denon-client/lib/options/zone_2_options.js",
+            "line": 30,
+            "description": "The Off attribute.",
+            "default": "OFF",
+            "itemtype": "property",
+            "name": "Off",
+            "type": "String",
+            "class": "Zone2Options"
+        },
+        {
+            "file": "../node-denon-client/lib/options/zone_2_options.js",
+            "line": 37,
+            "description": "The Status attribute.",
+            "default": "?",
+            "itemtype": "property",
+            "name": "Status",
+            "type": "String",
+            "class": "Zone2Options"
+        },
+        {
+            "file": "../node-denon-client/lib/options/zone_2_options.js",
+            "line": 44,
+            "description": "The Base attribute.",
+            "default": "Z2",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "Base",
+            "type": "String",
+            "class": "Zone2Options"
+        },
+        {
             "file": "../node-denon-client/lib/denon_client.js",
             "line": 18,
             "description": "Initializes the telnet connection and sets up events.",
@@ -887,7 +970,21 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 109,
+            "line": 90,
+            "itemtype": "event",
+            "name": "zone2Changed",
+            "params": [
+                {
+                    "name": "zone2Status",
+                    "description": "The current display dim status",
+                    "type": "Zone2Options"
+                }
+            ],
+            "class": "DenonClient"
+        },
+        {
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 117,
             "description": "Does the RegEx magic.",
             "itemtype": "method",
             "name": "_applyRegex",
@@ -908,7 +1005,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 145,
+            "line": 153,
             "description": "Receives the incoming data. Does some RegEx magic.\nCalls the defined events and resolves promises.",
             "itemtype": "method",
             "name": "_onData",
@@ -925,7 +1022,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 164,
+            "line": 172,
             "description": "Sends a command to the Denon AVR",
             "itemtype": "method",
             "name": "sendCommand",
@@ -949,7 +1046,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 191,
+            "line": 199,
             "description": "Sets the volume of the Denon AVR.\nUse {VolumeOptions} or a number from 0-98.\n\n80=80(0dB), 00=-0(--dB)(MIN)\nVolumeOptions.Up / VolumeOptions.Down",
             "itemtype": "method",
             "name": "setVolume",
@@ -968,7 +1065,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 209,
+            "line": 217,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
@@ -980,7 +1077,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 221,
+            "line": 229,
             "description": "Returns the current Denon AVR volume.",
             "itemtype": "method",
             "name": "getVolume",
@@ -992,7 +1089,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 233,
+            "line": 241,
             "description": "Sets the power mode of the Denon AVR. (On / Standby).\nUse {PowerOptions}.",
             "itemtype": "method",
             "name": "setPower",
@@ -1011,7 +1108,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 247,
+            "line": 255,
             "description": "Returns the current power status of the Denon AVR.",
             "itemtype": "method",
             "name": "getPower",
@@ -1023,7 +1120,38 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 259,
+            "line": 267,
+            "description": "Sets the zone 2 state of the Denon AVR. (On / Off).\nUse {Zone2Options}.",
+            "itemtype": "method",
+            "name": "setZone2",
+            "params": [
+                {
+                    "name": "zone2Options",
+                    "description": "[The zone2 option]",
+                    "type": "Zone2Options"
+                }
+            ],
+            "return": {
+                "description": "[A response]",
+                "type": "Promise"
+            },
+            "class": "DenonClient"
+        },
+        {
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 281,
+            "description": "Returns the current zone 2 status of the Denon AVR.",
+            "itemtype": "method",
+            "name": "getZone2",
+            "return": {
+                "description": "[A response]",
+                "type": "Promise"
+            },
+            "class": "DenonClient"
+        },
+        {
+            "file": "../node-denon-client/lib/denon_client.js",
+            "line": 293,
             "description": "Sets the mute status of the Denon AVR. (On / Off).\nUse {MuteOptions}.",
             "itemtype": "method",
             "name": "setMute",
@@ -1042,7 +1170,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 273,
+            "line": 307,
             "description": "Returns the current mute status of the Denon AVR.",
             "itemtype": "method",
             "name": "getMute",
@@ -1054,7 +1182,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 285,
+            "line": 319,
             "description": "Sets the active input of the Denon AVR. (TV, DVD, ...).\nUse {InputOptions}.",
             "itemtype": "method",
             "name": "setInput",
@@ -1073,7 +1201,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 299,
+            "line": 333,
             "description": "Returns the current active input source (TV, DVD, ...) of the Denon AVR.",
             "itemtype": "method",
             "name": "getInput",
@@ -1085,7 +1213,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 311,
+            "line": 345,
             "description": "Sets the surround mode of the Denon AVR. (Dolby, Stereo, ...).\nUse {SurroundOptions}.",
             "itemtype": "method",
             "name": "setSurround",
@@ -1104,7 +1232,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 325,
+            "line": 359,
             "description": "Returns the current surround mode of the Denon AVR.",
             "itemtype": "method",
             "name": "getSurround",
@@ -1116,7 +1244,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 337,
+            "line": 371,
             "description": "Returns the brightness level of the display",
             "itemtype": "method",
             "name": "getBrightness",
@@ -1128,7 +1256,7 @@
         },
         {
             "file": "../node-denon-client/lib/denon_client.js",
-            "line": 349,
+            "line": 383,
             "description": "Sets the brightness level of the display",
             "itemtype": "method",
             "name": "setBrightness",
@@ -1147,7 +1275,7 @@
         },
         {
             "file": "../node-denon-client/lib/options.js",
-            "line": 15,
+            "line": 16,
             "itemtype": "property",
             "name": "InputOptions",
             "type": "{InputOptions}",
@@ -1155,7 +1283,7 @@
         },
         {
             "file": "../node-denon-client/lib/options.js",
-            "line": 20,
+            "line": 21,
             "itemtype": "property",
             "name": "MuteOptions",
             "type": "{MuteOptions}",
@@ -1163,7 +1291,7 @@
         },
         {
             "file": "../node-denon-client/lib/options.js",
-            "line": 25,
+            "line": 26,
             "itemtype": "property",
             "name": "PowerOptions",
             "type": "{PowerOptions}",
@@ -1171,7 +1299,7 @@
         },
         {
             "file": "../node-denon-client/lib/options.js",
-            "line": 30,
+            "line": 31,
             "itemtype": "property",
             "name": "SurroundOptions",
             "type": "{SurroundOptions}",
@@ -1179,7 +1307,7 @@
         },
         {
             "file": "../node-denon-client/lib/options.js",
-            "line": 35,
+            "line": 36,
             "itemtype": "property",
             "name": "VolumeOptions",
             "type": "{VolumeOptions}",
@@ -1187,10 +1315,18 @@
         },
         {
             "file": "../node-denon-client/lib/options.js",
-            "line": 41,
+            "line": 42,
             "itemtype": "property",
             "name": "DisplayDimOptions",
             "type": "{DisplayDimOptions}",
+            "class": "Options"
+        },
+        {
+            "file": "../node-denon-client/lib/options.js",
+            "line": 48,
+            "itemtype": "property",
+            "name": "Zone2Options",
+            "type": "{Zone2Options}",
             "class": "Options"
         }
     ],
